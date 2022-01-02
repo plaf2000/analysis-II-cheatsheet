@@ -1,2 +1,46 @@
 \documentclass[10pt,landscape, a4paper]{article}
+\usepackage[legalpaper, landscape, right=.2in, top=.5in, bottom=.5in, left=.2in]{geometry}
 \usepackage{multicol}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\setlength{\columnseprule}{1pt}
+\setcounter{section}{1}
+
+
+\newcommand{\custombox}[3]{\begin{tcolorbox}[title = \textbf{#1}, colback=#2!10!white, colframe = #2!70!white, coltitle=white]
+    #3
+    \end{tcolorbox}}
+
+\newcommand{\theorem}[2]{\custombox{Theorem #1}{red}{#2}}
+\newcommand{\definition}[2]{\custombox{Definition #1}{orange}{#2}}
+\newcommand{\prop}[2]{\custombox{Proposition #1}{yellow!60!orange}{#2}}
+    
+
+
+\begin{document}
+\begin{multicols*}{3}
+    \begin{center}
+        \Large{\textbf{Analysis II HS21}} \\
+        \small{by plaffranchi}
+    \end{center}
+    \section{ODE (ordinary differential equation)}
+    \theorem{2.1.6}{Let $F: \mathbf{R}^{2} \rightarrow \mathbf{R}$ be differentiable. Let $x_{0} \in \mathbf{R}$ and $y_{0} \in \mathbf{R}^{2}$. Then the ODE
+    $ y^{\prime}=F(x, y) $ has a unique solution $f$ defined on a "largest" open interval I containing $x_{0}$ such that $f\left(x_{0}\right)=y_{0} .$}
+    \definition{2.2.1}{Let $I \subset \mathbf{R}$ be an open interval and $k \in \mathbb{N}_0$. An homogeneous linear ODE of order $k$ on $I$ is of the form
+    $
+        y^{(k)}+a_{k-1} y^{(k-1)}+\cdots+a_{1} y^{\prime}+a_{0} y=0
+    $
+    where the coefficients $a_{0}, \ldots, a_{k-1}$ are complex-valued functions on $I$, and the unknown is a function $I \to \mathbf{C}$ that is $k$-times differentiable on $I$.
+    An equation of the form
+    $
+        y^{(k)}+a_{k-1} y^{(k-1)}+\cdots+a_{1} y^{\prime}+a_{0} y=b,
+    $
+    where $b: I \rightarrow \mathbf{C}$ is another function, is called an inhomogeneous linear ODE.}
+
+    % Theorem 2.2.3?
+
+
+    \prop{2.3.1}{Any solution of $y'+ay=0$ is of the form $f(x)=z\exp(-A(x))$ where $A$ is a primitive of $a$. The unique solution with $f(x_0)=y_0$ is $f(x)= y_0\exp(A(x_0)-A(x))$.}
+\end{multicols*}
+\end{document}
