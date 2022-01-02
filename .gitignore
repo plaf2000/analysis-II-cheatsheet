@@ -11,6 +11,8 @@ dcamenisch
 *.cb
 *.cb2
 .*.lb
+*.fdb_latexmk
+*.synctex.gz
 
 *.dvi
 *.xdv
