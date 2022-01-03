@@ -2,6 +2,8 @@
 \usepackage[legalpaper, landscape, right=.2in, top=.5in, bottom=.5in, left=.2in]{geometry}
 \usepackage{multicol}
 \usepackage{amsfonts}
+\usepackage{amsmath,amsthm}
+\usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{tcolorbox}
 \setlength{\columnseprule}{1pt}
@@ -14,7 +16,8 @@
 
 \newcommand{\theorem}[2]{\custombox{Theorem #1}{red}{#2}}
 \newcommand{\definition}[2]{\custombox{Definition #1}{orange}{#2}}
-\newcommand{\prop}[2]{\custombox{Proposition #1}{yellow!60!orange}{#2}}
+\newcommand{\prop}[2]{\custombox{Proposition #1}{black!50!orange!30!yellow}{#2}}
+\newcommand{\other}[2]{\custombox{#1}{green!60!black}{#2}}
     
 
 
@@ -37,12 +40,22 @@
         y^{(k)}+a_{k-1} y^{(k-1)}+\cdots+a_{1} y^{\prime}+a_{0} y=b,
     $
     where $b: I \rightarrow \mathbf{C}$ is another function, is called an inhomogeneous linear ODE.}
+    \other{Recognize an ODE}{\begin{enumerate}
+        \item no coefficients before the highest derivative
+        \item all coefficients are continuous
+        \item no products of $y$ or their derivatives
+        \item no powers of $y$ or their derivatives
+        \item no functions depending on $y$ or their derivatives
+    \end{enumerate}}
 
     % Theorem 2.2.3?
 
 
     \prop{2.3.1}{Any solution of $y'+ay=0$ is of the form $f(x)=z\exp(-A(x))$ where $A$ is a primitive of $a$. The unique solution with $f(x_0)=y_0$ is $f(x)= y_0\exp(A(x_0)-A(x))$.}
 
-    
+    \other{Solving inhomogeneous equations}{\textbf{Case 1:} Make a guess. For example $y'=y+x^2$ guess $f(x) = ax^2+bx+c$, and solve the equation.\\
+    \textbf{Case 2:} Use the variation of the constant. Assume $f_p=z(x)\exp(-A(x))$ for $z: I\to \mathbb{C}$. Then $z'(x) = b(x)\exp(A(x)) \implies k(x) = \int b(x)\exp(A(x))dx$.}
+
+
 \end{multicols*}
 \end{document}
