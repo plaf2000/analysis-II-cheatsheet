@@ -28,18 +28,18 @@
         \small{by plaffranchi}
     \end{center}
     \section{ODE (ordinary differential equation)}
-    \theorem{2.1.6}{Let $F: \mathbf{R}^{2} \rightarrow \mathbf{R}$ be differentiable. Let $x_{0} \in \mathbf{R}$ and $y_{0} \in \mathbf{R}^{2}$. Then the ODE
+    \theorem{2.1.6}{Let $F: \mathbb{R}^{2} \rightarrow \mathbb{R}$ be differentiable. Let $x_{0} \in \mathbb{R}$ and $y_{0} \in \mathbb{R}^{2}$. Then the ODE
     $ y^{\prime}=F(x, y) $ has a unique solution $f$ defined on a "largest" open interval I containing $x_{0}$ such that $f\left(x_{0}\right)=y_{0} .$}
-    \definition{2.2.1}{Let $I \subset \mathbf{R}$ be an open interval and $k \in \mathbb{N}_0$. An homogeneous linear ODE of order $k$ on $I$ is of the form
+    \definition{2.2.1}{Let $I \subset \mathbb{R}$ be an open interval and $k \in \mathbb{N}_0$. An homogeneous linear ODE of order $k$ on $I$ is of the form
     $
         y^{(k)}+a_{k-1} y^{(k-1)}+\cdots+a_{1} y^{\prime}+a_{0} y=0
     $
-    where the coefficients $a_{0}, \ldots, a_{k-1}$ are complex-valued functions on $I$, and the unknown is a function $I \to \mathbf{C}$ that is $k$-times differentiable on $I$.
+    where the coefficients $a_{0}, \ldots, a_{k-1}$ are complex-valued functions on $I$, and the unknown is a function $I \to \mathbb{C}$ that is $k$-times differentiable on $I$.
     An equation of the form
     $
         y^{(k)}+a_{k-1} y^{(k-1)}+\cdots+a_{1} y^{\prime}+a_{0} y=b,
     $
-    where $b: I \rightarrow \mathbf{C}$ is another function, is called an inhomogeneous linear ODE.}
+    where $b: I \rightarrow \mathbb{C}$ is another function, is called an inhomogeneous linear ODE.}
     \other{Recognize an ODE}{\begin{enumerate}
         \item no coefficients before the highest derivative
         \item all coefficients are continuous
@@ -55,6 +55,32 @@
 
     \other{Solving inhomogeneous equations}{\textbf{Case 1:} Make a guess. For example $y'=y+x^2$ guess $f(x) = ax^2+bx+c$, and solve the equation.\\
     \textbf{Case 2:} Use the variation of the constant. Assume $f_p=z(x)\exp(-A(x))$ for $z: I\to \mathbb{C}$. Then $z'(x) = b(x)\exp(A(x)) \implies k(x) = \int b(x)\exp(A(x))dx$.}
+    \definition{Linear differential equations with constant coefficients}{Let $k \in \mathbb{N}_0$, $a_0,...,a_{k-1} \in \mathbb{C}$ fixed and $b$ a general continuous function, then $y^{(k)}+a_{k-1} y^{(k-1)}+\cdots+a_{1} y^{\prime}+a_{0} y=b$ is such equation.}
+    \other{Solution of hom. diff. eq. with constant coefficients}{Look for solutions of the form $f(x)=e^{\alpha x}$ for $\alpha \in \mathbb{C}$. Then we have $f^{(j)}(x)=\alpha^{j} e^{\alpha x}$ for all $j \geqslant 0$ and for all $x$, which means that
+    \begin{align*}
+        &f^{(k)}(x)+a_{k-1} f^{(k-1)}(x)+\cdots+a_{1} f^{\prime}(x)+a_{0} f(x)\\
+        = &e^{\alpha x}\left(\alpha^{k}+a_{k-1} \alpha^{k-1}+\cdots+a_{1} \alpha+a_{0}\right) .
+    \end{align*} }
+
+
+EXAMPLE 2.4.1. The equation $y^{\prime \prime}-x y=0$ does not belong to this class, but the equations $y^{\prime}-y=0$ and $y^{\prime \prime}+y=0$ (satisfied by the exponential and by trigonometric functions) have constant coefficients.
+
+
+We conclude that $f$ is a solution of the homogeneous equation if and only if $P(\alpha)=0$, where $P$ is the polynomial with coefficients $a_{0}, \ldots, a_{k-1}$ :
+$$
+P(X)=X^{k}+a_{k-1} X^{k}+\cdots+a_{1} X+a_{0} .
+$$
+According to the Fundamental Theorem of Algebra, this polynomial of degree $k$ has $k$ complex roots, counted with multiplicity: there exist complex numbers $\alpha_{1}, \ldots, \alpha_{k}$ such that
+$$
+P(X)=\left(X-\alpha_{1}\right) \cdots\left(X-\alpha_{k}\right) .
+$$
+This polynomial is called the companion or characteristic polynomial of the homogeneous differential equation.
+
+REMARK 2.4.2. We repeat that this is only defined when the coefficients of the equation are constant.
+
+REMARK 2.4.3. Although it is natural to look for complex-valued solutions, one is often interested in situations where the coefficients $a_{i}$ are real and we know that the solution should take real values, or we want such solutions.
+
+Suppose that a root $\alpha=\beta+i \gamma$ is not real, so the imaginary part $\gamma$ is non-zero. Then the solution $f(x)=e^{\alpha x}$ does not take real values. However, in that case, the conjugate
 
 
 \end{multicols*}
