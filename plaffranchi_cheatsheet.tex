@@ -1,5 +1,5 @@
 \documentclass[10pt,landscape, a4paper]{article}
-\usepackage[legalpaper, landscape, right=.2in, top=.5in, bottom=.5in, left=.2in]{geometry}
+\usepackage[legalpaper, landscape, right=.2in, top=.25in, bottom=.5in, left=.2in]{geometry}
 \usepackage{multicol}
 \usepackage{amsfonts}
 \usepackage{amsmath,amsthm}
@@ -18,6 +18,7 @@
 \newcommand{\definition}[2]{\custombox{Definition #1}{orange}{#2}}
 \newcommand{\prop}[2]{\custombox{Proposition #1}{black!50!orange!30!yellow}{#2}}
 \newcommand{\other}[2]{\custombox{#1}{green!60!black}{#2}}
+\newcommand{\lemma}[2]{\custombox{Lemma #1}{blue!60!black}{#2}}
     
 
 
@@ -41,46 +42,93 @@
     $
     where $b: I \rightarrow \mathbb{C}$ is another function, is called an inhomogeneous linear ODE.}
     \other{Recognize an ODE}{\begin{enumerate}
-        \item no coefficients before the highest derivative
-        \item all coefficients are continuous
-        \item no products of $y$ or their derivatives
-        \item no powers of $y$ or their derivatives
-        \item no functions depending on $y$ or their derivatives
-    \end{enumerate}}
+            \item no coefficients before the highest derivative
+            \item all coefficients are continuous
+            \item no products of $y$ or their derivatives
+            \item no powers of $y$ or their derivatives
+            \item no functions depending on $y$ or their derivatives
+        \end{enumerate}}
 
     % Theorem 2.2.3?
 
 
     \prop{2.3.1}{Any solution of $y'+ay=0$ is of the form $f(x)=z\exp(-A(x))$ where $A$ is a primitive of $a$. The unique solution with $f(x_0)=y_0$ is $f(x)= y_0\exp(A(x_0)-A(x))$.}
 
+
     \other{Solving inhomogeneous equations}{\textbf{Case 1:} Make a guess. For example $y'=y+x^2$ guess $f(x) = ax^2+bx+c$, and solve the equation.\\
-    \textbf{Case 2:} Use the variation of the constant. Assume $f_p=z(x)\exp(-A(x))$ for $z: I\to \mathbb{C}$. Then $z'(x) = b(x)\exp(A(x)) \implies k(x) = \int b(x)\exp(A(x))dx$.}
+        \textbf{Case 2:} Use the variation of the constant. Assume $f_p=z(x)\exp(-A(x))$ for $z: I\to \mathbb{C}$. Then $z'(x) = b(x)\exp(A(x)) \implies k(x) = \int b(x)\exp(A(x))dx$.}
+
+
     \definition{Linear differential equations with constant coefficients}{Let $k \in \mathbb{N}_0$, $a_0,...,a_{k-1} \in \mathbb{C}$ fixed and $b$ a general continuous function, then $y^{(k)}+a_{k-1} y^{(k-1)}+\cdots+a_{1} y^{\prime}+a_{0} y=b$ is such equation.}
+
+
     \other{Solution of hom. diff. eq. with constant coefficients}{Look for solutions of the form $f(x)=e^{\alpha x}$ for $\alpha \in \mathbb{C}$. Then we have $f^{(j)}(x)=\alpha^{j} e^{\alpha x}$ for all $j \geqslant 0$ and for all $x$, which means that
     \begin{align*}
-        &f^{(k)}(x)+a_{k-1} f^{(k-1)}(x)+\cdots+a_{1} f^{\prime}(x)+a_{0} f(x)\\
-        = &e^{\alpha x}\left(\alpha^{k}+a_{k-1} \alpha^{k-1}+\cdots+a_{1} \alpha+a_{0}\right) .
+          & f^{(k)}(x)+a_{k-1} f^{(k-1)}(x)+\cdots+a_{1} f^{\prime}(x)+a_{0} f(x)                \\
+        = & e^{\alpha x}\left(\alpha^{k}+a_{k-1} \alpha^{k-1}+\cdots+a_{1} \alpha+a_{0}\right) .
+    \end{align*}
+    This translates into finding the zeros of the characteristic polynomial:
+    \begin{align*}
+        P(X)= & X^{k}+a_{k-1} X^{k}+\cdots+a_{1} X+a_{0}                      \\
+        =     & \left(X-\alpha_{1}\right) \cdots\left(X-\alpha_{k}\right) = 0
     \end{align*} }
 
 
-EXAMPLE 2.4.1. The equation $y^{\prime \prime}-x y=0$ does not belong to this class, but the equations $y^{\prime}-y=0$ and $y^{\prime \prime}+y=0$ (satisfied by the exponential and by trigonometric functions) have constant coefficients.
+    \other{Imaginary roots}{If a root is not real i.e. $\alpha = \beta + i\gamma$, the solution $f(x)=e^{\alpha x}$ does not take real values, but $\overline{\alpha} = \beta - i\gamma$ is also a root, hence we can write $\widetilde{f}_{1}(x)=e^{\beta x} \cos (\gamma x), \quad \widetilde{f}_{2}(x)=e^{\beta x} \sin (\gamma x)$ instead of $f_{1}(x)=e^{\alpha x}, \quad f_{2}(x)=e^{\bar{\alpha} x}$}
 
 
-We conclude that $f$ is a solution of the homogeneous equation if and only if $P(\alpha)=0$, where $P$ is the polynomial with coefficients $a_{0}, \ldots, a_{k-1}$ :
-$$
-P(X)=X^{k}+a_{k-1} X^{k}+\cdots+a_{1} X+a_{0} .
-$$
-According to the Fundamental Theorem of Algebra, this polynomial of degree $k$ has $k$ complex roots, counted with multiplicity: there exist complex numbers $\alpha_{1}, \ldots, \alpha_{k}$ such that
-$$
-P(X)=\left(X-\alpha_{1}\right) \cdots\left(X-\alpha_{k}\right) .
-$$
-This polynomial is called the companion or characteristic polynomial of the homogeneous differential equation.
+    \other{Multiple roots}{\textbf{Case 1: no multiple roots.} Any solution of the equation is of the form $f(x) = z_1e^{a_1x}+\cdots +z_ke^{a_kx}$.\\
+    \textbf{Case 2: multiple roots.}  Suppose that $\alpha$ is a multiple root of order $j$ with $2 \leqslant j \leqslant k$. Then the $k$ functions
+    $
+        f_{\alpha, 0}(x)=e^{\alpha x}, \quad f_{\alpha, 1}(x)=x e^{\alpha x}, \quad \cdots, \quad f_{\alpha, j-1}(x)=x^{j-1} e^{\alpha x}
+    $
+    are linearly independent solutions. Taking the union of the functions $f_{\alpha, j}$ for all roots of $P$, each with its multiplicity, gives a basis of the space of solutions.}
 
-REMARK 2.4.2. We repeat that this is only defined when the coefficients of the equation are constant.
+    \section{Differential calculus in $\mathbb{R}^n$}
 
-REMARK 2.4.3. Although it is natural to look for complex-valued solutions, one is often interested in situations where the coefficients $a_{i}$ are real and we know that the solution should take real values, or we want such solutions.
 
-Suppose that a root $\alpha=\beta+i \gamma$ is not real, so the imaginary part $\gamma$ is non-zero. Then the solution $f(x)=e^{\alpha x}$ does not take real values. However, in that case, the conjugate
+    \definition{3.2.1.}{Let $\left(x_{k}\right)_{k \in \mathbb{N}}$ where $x_{k} \in \mathbb{R}^{n}$. Write
+    $
+        x_{k}=\left(x_{k, 1}, \ldots, x_{k, n}\right) .
+    $
+    Let $y=\left(y_{1}, \ldots, y_{n}\right) \in \mathbb{R}^{n}$. The sequence $\left(x_{k}\right)$ converges to ($\to$) $y$ as $k \rightarrow+\infty$ if  $\forall \varepsilon>0$, if $\exists N \geqslant 1$ such that  $\forall n \geqslant N$, we have
+    $
+        \left\|x_{k}-y\right\|<\varepsilon \text {. }
+    $}
+
+    \lemma{3.2.2.}{
+    $\left(x_{k}\right) \to y$ as $k \rightarrow+\infty$ $\iff$ either:
+    (1) $\forall i, 1 \leqslant i \leqslant n$, the sequence of real numbers $\left(x_{k, i}\right) \to y_{i}$.
+    (2) The sequence of real numbers $\left\|x_{k}-y\right\|\to 0$ as $k \rightarrow+\infty$.}
+
+
+    \definition{3.2.3.}{ Let $X \subset \mathbb{R}^{n}$ and $f: X \rightarrow \mathbb{R}^{m}$. (1) Let $x_{0} \in X$. $f$ is continuous at $x_{0}$ if $\forall \varepsilon>0\ \exists \delta>0$ s.t. $\left\|x-x_{0}\right\|<\delta \implies
+        \left\|f(x)-f\left(x_{0}\right)\right\|<\varepsilon$, $\forall x \in X$. (2) $f$ is continuous on $X$ if it is continuous at $x_{0}$ $\forall x_{0} \in X$.}
+
+
+    \prop{3.2.4.}{Let $X \subset \mathbb{R}^{n}$ and $f: X \rightarrow \mathbb{R}^{m}$. Let $x_{0} \in X$. The function $f$ is continuous at $x_{0} \iff \forall \left(x_{k}\right)_{k} \geqslant 1$ in $X$ s.t. $x_{k} \rightarrow x_{0}$ as $k \rightarrow+\infty$, the sequence $\left(f\left(x_{k}\right)\right)_{k} \geqslant 1$ in $\mathbb{R}^{m}$ converges to $f(x)$.}
+
+
+    \definition{3.2.5.}{Let $X \subset \mathbb{R}^{n}$ and $f: X \rightarrow \mathbb{R}^{m}$. Let $x_{0} \in X$ and $y \in \mathbb{R}^{m}$. We say that $f$ has the limit $y$ as $x \rightarrow x_{0}$ with $x \neq x_{0}$ if for every $\varepsilon>0$, there exists $\delta>0$, s.t.  $\forall x \in X, x \neq x_{0}$, s.t. $\left\|x-x_{0}\right\|<\delta$, we have $\|f(x)-y\|<\varepsilon$. We then write
+    $
+        \lim _{x \rightarrow x_{0} \atop x \neq x_{0}} f(x)=y
+    $.}
+
+
+    \prop{3.2.7.}{Let $X \subset \mathbb{R}^{n}$ and $f: X \rightarrow \mathbb{R}^{m} .$ Let $x_{0} \in X$ and $y \in \mathbb{R}^{m} .$ We have
+        $
+            \lim _{x \rightarrow x_{0} \atop x \neq x_{0}} f(x)=y \iff
+        $
+        $\forall\left(x_{k}\right) \in X$ s.t. $x_{k} \rightarrow x$ as $k \rightarrow+\infty$, and $x_{k} \neq x_{0}$, the sequence $\left(f\left(x_{k}\right)\right)$ in $\mathbb{R}^{m}$ converges to $y$.}
+
+
+    \prop{3.2.9.}{Let $X \subset \mathbb{R}^{n}, Y \subset \mathbb{R}^{m}$ and $p \geqslant 1$ an integer. Let $f: X \rightarrow Y$ and $g: Y \rightarrow \mathbb{R}^{p}$ be continuous functions. Then the composite $g \circ f$ is continuous.}
+
+    \definition{3.2.11.}{
+       (1) A subset $X \subset \mathbb{R}^{n}$ is bounded if the set of $\|x\|$ for $x \in X$ is bounded in $\mathbb{R}$.
+(2) A subset $X \subset \mathbb{R}^{n}$ is closed if for every sequence $\left(x_{k}\right)$ in $X$ that converges in $\mathbb{R}^{n}$ to some vector $y \in \mathbb{R}^{n}$, we have $y \in X$.
+(3) A subset $X \subset \mathbb{R}^{n}$ is compact if it is bounded and closed.
+    }
 
 
 \end{multicols*}
