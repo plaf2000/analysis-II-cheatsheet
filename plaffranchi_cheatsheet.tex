@@ -8,18 +8,24 @@
 \usepackage{tcolorbox}
 \setlength{\columnseprule}{1pt}
 \setcounter{section}{1}
+\tcbuselibrary{listings,breakable}
 
 
-\newcommand{\custombox}[3]{\begin{tcolorbox}[title = \textbf{#1}, colback=#2!10!white, colframe = #2!70!white, coltitle=white]
+\newcommand{\custombox}[3]{\begin{tcolorbox}[left=0mm,right=0mm,bottom=0mm,top=0mm,title = \textbf{#1}, colback=#2!10!white, colframe = #2!70!white, coltitle=white, breakable]
     #3
     \end{tcolorbox}}
 
-\newcommand{\theorem}[2]{\custombox{Theorem #1}{red}{#2}}
-\newcommand{\definition}[2]{\custombox{Definition #1}{orange}{#2}}
+\newcommand{\theorem}[2]{\custombox{Theorem #1}{violet}{#2}}
+\newcommand{\definition}[2]{\custombox{Definition #1}{red}{#2}}
 \newcommand{\prop}[2]{\custombox{Proposition #1}{black!50!orange!30!yellow}{#2}}
 \newcommand{\other}[2]{\custombox{#1}{green!60!black}{#2}}
 \newcommand{\lemma}[2]{\custombox{Lemma #1}{blue!60!black}{#2}}
-    
+\newcommand{\corollary}[2]{\custombox{Corollary #1}{orange}{#2}}
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Rn}{\R^n}
+\newcommand{\Rm}{\R^m}
 
 
 \begin{document}
@@ -130,6 +136,60 @@
 (3) A subset $X \subset \mathbb{R}^{n}$ is compact if it is bounded and closed.
     }
 
+    \prop{3.2.13.}{Let $g:\Rn \to \Rm$ be a continuous map. For any closed set $Y\subset \Rm$, $f^{-1}(Y) = {x\in\Rn : f(x)\in Y} \subset \Rn$ is closed.}
 
+    \theorem{3.2.15.}{Let $X\subset \Rn$ be a non-empty compact set and $f:X\to\R$ a continuous function. Then $f$ is bounded and achieves its max and min. I.e. $\exists x_+,x_-\in X$ s.t. $f(x_+)=\sup_{x\in X}f(x)$, $f(x_-)=\inf_{x\in X}f(x)$.}
+
+    \definition{3.3.1.}{A subset $X \subset \Rn$ is open if, for any $x=\left(x_{1}, \ldots, x_{n}\right) \in X$, there exists $\delta>0$ such that the set
+$$
+\left\{y=\left(y_{1}, \ldots, y_{n}\right) \in \Rn:\left|x_{i}-y_{i}\right|<\delta \text { for all } i\right\}
+$$
+is contained in $X$.
+In other words: any point of $\Rn$ obtained by changing any coordinate of $x$ by at most $\delta$ is still in $X$.}
+
+\prop{3.3.2.}{A set $X \subset \Rn$ is open if and only if the complement
+$
+Y=\left\{x \in \Rn: x \notin X\right\}
+$
+is closed.}
+
+\corollary{3.3.3.}{If $f: \Rn \rightarrow \Rm$ is continuous and $Y \subset \Rm$ is open, then $f^{-1}(Y)$ is open in $\Rn$.}
+
+\definition{3.3.5}{Let $X \subset \Rn$ be an open set. Let $f: X \rightarrow \Rm$ be a function. Let $1 \leqslant i \leqslant n$. We say that $f$ has a partial derivative on $X$ with respect to the $i$-th variable, or coordinate, if for all $x_{0}=\left(x_{0,1}, \ldots, x_{0, n}\right) \in X$, the function defined by
+$$
+g(t)=f\left(x_{0,1}, \ldots, x_{0, i-1}, t, x_{0, i+1}, \ldots, x_{0, n}\right)
+$$
+on the set
+$
+I=\left\{t \in \R:\left(x_{0,1}, \ldots, x_{0, i-1}, t, x_{0, i+1}, \ldots, x_{0, n}\right) \in X\right\}
+$
+is differentiable at $t=x_{0, i}$. Its derivative $g^{\prime}\left(x_{0, i}\right)$ at $x_{0, i}$ is denoted
+$$
+\frac{\partial f}{\partial x_{i}}\left(x_{0}\right), \quad \partial_{x_{i}} f\left(x_{0}\right), \quad \partial_{i} f\left(x_{0}\right)
+$$}
+
+\prop{3.3.7.}{Consider $X \subset \mathbf{R}^{n}$ open and $f, g$ functions from $X$ to $\mathbf{R}^{m}$. Let $1 \leqslant i \leqslant n$.
+(1) If $f$ and $g$ have partial derivatives with respect to the $i$-th coordinate on $X$, then $f+g$ also does, and
+$$
+\partial_{x_{i}}(f+g)=\partial_{x_{i}}(f)+\partial_{x_{i}}(g) .
+$$
+(2) If $m=1$, and if $f$ and $g$ have partial derivatives with respect to the $i$-th coordinate on $X$, then $f g$ also does and
+$$
+\partial_{x_{i}}(f g)=\partial_{x_{i}}(f) g+f \partial_{x_{i}}(g) .
+$$
+Furthermore, if $g(x) \neq 0$ for all $x \in X$, then $f / g$ has a partial derivative with respect to the $i$-th coordinate on $X$, with
+$$
+\partial_{x_{i}}(f / g)=\left(\partial_{x_{i}}(f) g-f \partial_{x_{i}}(g)\right) / g^{2} .
+$$}
+
+\definition{3.3.9.}{Let $X \subset \mathbf{R}^{n}$ open and $f: X \rightarrow \mathbf{R}^{m}$ a function with partial derivatives on $X$. Write
+$$
+f(x)=\left(f_{1}(x), \ldots, f_{m}(x)\right) .
+$$
+For any $x \in X$, the matrix
+$$
+J_{f}(x)=\left(\partial_{x_{j}} f_{i}(x)\right)_{1 \leqslant i \leqslant m \atop 1 \leqslant j \leqslant n}
+$$
+with $m$ rows and $n$ columns is called the Jacobi matrix of $f$ at $x$.}
 \end{multicols*}
 \end{document}
