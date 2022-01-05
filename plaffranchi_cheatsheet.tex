@@ -26,6 +26,7 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Rn}{\R^n}
 \newcommand{\Rm}{\R^m}
+\newcommand{\Rp}{\R^p}
 
 
 \begin{document}
@@ -36,8 +37,8 @@
     \end{center}
     \section{ODE (ordinary differential equation)}
     \theorem{2.1.6}{Let $F: \mathbb{R}^{2} \rightarrow \mathbb{R}$ be differentiable. Let $x_{0} \in \mathbb{R}$ and $y_{0} \in \mathbb{R}^{2}$. Then the ODE
-    $ y^{\prime}=F(x, y) $ has a unique solution $f$ defined on a "largest" open interval I containing $x_{0}$ such that $f\left(x_{0}\right)=y_{0} .$}
-    \definition{2.2.1}{Let $I \subset \mathbb{R}$ be an open interval and $k \in \mathbb{N}_0$. An homogeneous linear ODE of order $k$ on $I$ is of the form
+    $ y^{\prime}=F(x, y) $ has a \textbf{unique solution} $f$ defined on a "largest" open interval I containing $x_{0}$ such that $f\left(x_{0}\right)=y_{0} .$}
+    \definition{2.2.1}{Let $I \subset \mathbb{R}$ be an open interval and $k \in \mathbb{N}_0$. An \textbf{homogeneous linear ODE of order} $k$ on $I$ is of the form
     $
         y^{(k)}+a_{k-1} y^{(k-1)}+\cdots+a_{1} y^{\prime}+a_{0} y=0
     $
@@ -46,7 +47,7 @@
     $
         y^{(k)}+a_{k-1} y^{(k-1)}+\cdots+a_{1} y^{\prime}+a_{0} y=b,
     $
-    where $b: I \rightarrow \mathbb{C}$ is another function, is called an inhomogeneous linear ODE.}
+    where $b: I \rightarrow \mathbb{C}$ is another function, is called an \textbf{inhomogeneous linear ODE}.}
     \other{Recognize an ODE}{\begin{enumerate}
             \item no coefficients before the highest derivative
             \item all coefficients are continuous
@@ -97,7 +98,7 @@
     $
         x_{k}=\left(x_{k, 1}, \ldots, x_{k, n}\right) .
     $
-    Let $y=\left(y_{1}, \ldots, y_{n}\right) \in \mathbb{R}^{n}$. The sequence $\left(x_{k}\right)$ converges to ($\to$) $y$ as $k \rightarrow+\infty$ if  $\forall \varepsilon>0$, if $\exists N \geqslant 1$ such that  $\forall n \geqslant N$, we have
+    Let $y=\left(y_{1}, \ldots, y_{n}\right) \in \mathbb{R}^{n}$. The sequence $\left(x_{k}\right)$ \textbf{converges to ($\to$)} $y$ as $k \rightarrow+\infty$ if  $\forall \varepsilon>0$, if $\exists N \geqslant 1$ such that  $\forall n \geqslant N$, we have
     $
         \left\|x_{k}-y\right\|<\varepsilon \text {. }
     $}
@@ -108,14 +109,14 @@
     (2) The sequence of real numbers $\left\|x_{k}-y\right\|\to 0$ as $k \rightarrow+\infty$.}
 
 
-    \definition{3.2.3.}{ Let $X \subset \mathbb{R}^{n}$ and $f: X \rightarrow \mathbb{R}^{m}$. (1) Let $x_{0} \in X$. $f$ is continuous at $x_{0}$ if $\forall \varepsilon>0\ \exists \delta>0$ s.t. $\left\|x-x_{0}\right\|<\delta \implies
-        \left\|f(x)-f\left(x_{0}\right)\right\|<\varepsilon$, $\forall x \in X$. (2) $f$ is continuous on $X$ if it is continuous at $x_{0}$ $\forall x_{0} \in X$.}
+    \definition{3.2.3.}{ Let $X \subset \mathbb{R}^{n}$ and $f: X \rightarrow \mathbb{R}^{m}$. (1) Let $x_{0} \in X$. $f$ is\textbf{ continuous at $x_{0}$} if $\forall \varepsilon>0\ \exists \delta>0$ s.t. $\left\|x-x_{0}\right\|<\delta \implies
+        \left\|f(x)-f\left(x_{0}\right)\right\|<\varepsilon$, $\forall x \in X$. (2) $f$ is \textbf{continuous} on $X$ if it is continuous at $x_{0}$ $\forall x_{0} \in X$.}
 
 
     \prop{3.2.4.}{Let $X \subset \mathbb{R}^{n}$ and $f: X \rightarrow \mathbb{R}^{m}$. Let $x_{0} \in X$. The function $f$ is continuous at $x_{0} \iff \forall \left(x_{k}\right)_{k} \geqslant 1$ in $X$ s.t. $x_{k} \rightarrow x_{0}$ as $k \rightarrow+\infty$, the sequence $\left(f\left(x_{k}\right)\right)_{k} \geqslant 1$ in $\mathbb{R}^{m}$ converges to $f(x)$.}
 
 
-    \definition{3.2.5.}{Let $X \subset \mathbb{R}^{n}$ and $f: X \rightarrow \mathbb{R}^{m}$. Let $x_{0} \in X$ and $y \in \mathbb{R}^{m}$. We say that $f$ has the limit $y$ as $x \rightarrow x_{0}$ with $x \neq x_{0}$ if for every $\varepsilon>0$, there exists $\delta>0$, s.t.  $\forall x \in X, x \neq x_{0}$, s.t. $\left\|x-x_{0}\right\|<\delta$, we have $\|f(x)-y\|<\varepsilon$. We then write
+    \definition{3.2.5.}{Let $X \subset \mathbb{R}^{n}$ and $f: X \rightarrow \mathbb{R}^{m}$. Let $x_{0} \in X$ and $y \in \mathbb{R}^{m}$. We say that $f$ has the \textbf{limit} $y$ as $x \rightarrow x_{0}$ with $x \neq x_{0}$ if for every $\varepsilon>0$, there exists $\delta>0$, s.t.  $\forall x \in X, x \neq x_{0}$, s.t. $\left\|x-x_{0}\right\|<\delta$, we have $\|f(x)-y\|<\varepsilon$. We then write
     $
         \lim _{x \rightarrow x_{0} \atop x \neq x_{0}} f(x)=y
     $.}
@@ -131,65 +132,173 @@
     \prop{3.2.9.}{Let $X \subset \mathbb{R}^{n}, Y \subset \mathbb{R}^{m}$ and $p \geqslant 1$ an integer. Let $f: X \rightarrow Y$ and $g: Y \rightarrow \mathbb{R}^{p}$ be continuous functions. Then the composite $g \circ f$ is continuous.}
 
     \definition{3.2.11.}{
-       (1) A subset $X \subset \mathbb{R}^{n}$ is bounded if the set of $\|x\|$ for $x \in X$ is bounded in $\mathbb{R}$.
-(2) A subset $X \subset \mathbb{R}^{n}$ is closed if for every sequence $\left(x_{k}\right)$ in $X$ that converges in $\mathbb{R}^{n}$ to some vector $y \in \mathbb{R}^{n}$, we have $y \in X$.
-(3) A subset $X \subset \mathbb{R}^{n}$ is compact if it is bounded and closed.
+        (1) A subset $X \subset \mathbb{R}^{n}$ is \textbf{bounded} if the set of $\|x\|$ for $x \in X$ is bounded in $\mathbb{R}$.
+        (2) A subset $X \subset \mathbb{R}^{n}$ is \textbf{closed} if for every sequence $\left(x_{k}\right)$ in $X$ that converges in $\mathbb{R}^{n}$ to some vector $y \in \mathbb{R}^{n}$, we have $y \in X$.
+        (3) A subset $X \subset \mathbb{R}^{n}$ is \textbf{compact} if it is bounded and closed.
     }
 
     \prop{3.2.13.}{Let $g:\Rn \to \Rm$ be a continuous map. For any closed set $Y\subset \Rm$, $f^{-1}(Y) = {x\in\Rn : f(x)\in Y} \subset \Rn$ is closed.}
 
     \theorem{3.2.15.}{Let $X\subset \Rn$ be a non-empty compact set and $f:X\to\R$ a continuous function. Then $f$ is bounded and achieves its max and min. I.e. $\exists x_+,x_-\in X$ s.t. $f(x_+)=\sup_{x\in X}f(x)$, $f(x_-)=\inf_{x\in X}f(x)$.}
 
-    \definition{3.3.1.}{A subset $X \subset \Rn$ is open if, for any $x=\left(x_{1}, \ldots, x_{n}\right) \in X$, there exists $\delta>0$ such that the set
-$$
-\left\{y=\left(y_{1}, \ldots, y_{n}\right) \in \Rn:\left|x_{i}-y_{i}\right|<\delta \text { for all } i\right\}
-$$
-is contained in $X$.
-In other words: any point of $\Rn$ obtained by changing any coordinate of $x$ by at most $\delta$ is still in $X$.}
+    \definition{3.3.1.}{A subset $X \subset \Rn$ is \textbf{open} if, for any $x=\left(x_{1}, \ldots, x_{n}\right) \in X$, there exists $\delta>0$ such that the set
+    $$
+        \left\{y=\left(y_{1}, \ldots, y_{n}\right) \in \Rn:\left|x_{i}-y_{i}\right|<\delta \text { for all } i\right\}
+    $$
+    is contained in $X$.
+    In other words: any point of $\Rn$ obtained by changing any coordinate of $x$ by at most $\delta$ is still in $X$.}
 
-\prop{3.3.2.}{A set $X \subset \Rn$ is open if and only if the complement
-$
-Y=\left\{x \in \Rn: x \notin X\right\}
-$
-is closed.}
+    \prop{3.3.2.}{A set $X \subset \Rn$ is open if and only if the complement
+        $
+            Y=\left\{x \in \Rn: x \notin X\right\}
+        $
+        is closed.}
 
-\corollary{3.3.3.}{If $f: \Rn \rightarrow \Rm$ is continuous and $Y \subset \Rm$ is open, then $f^{-1}(Y)$ is open in $\Rn$.}
+    \corollary{3.3.3.}{If $f: \Rn \rightarrow \Rm$ is continuous and $Y \subset \Rm$ is open, then $f^{-1}(Y)$ is open in $\Rn$.}
 
-\definition{3.3.5}{Let $X \subset \Rn$ be an open set. Let $f: X \rightarrow \Rm$ be a function. Let $1 \leqslant i \leqslant n$. We say that $f$ has a partial derivative on $X$ with respect to the $i$-th variable, or coordinate, if for all $x_{0}=\left(x_{0,1}, \ldots, x_{0, n}\right) \in X$, the function defined by
-$$
-g(t)=f\left(x_{0,1}, \ldots, x_{0, i-1}, t, x_{0, i+1}, \ldots, x_{0, n}\right)
-$$
-on the set
-$
-I=\left\{t \in \R:\left(x_{0,1}, \ldots, x_{0, i-1}, t, x_{0, i+1}, \ldots, x_{0, n}\right) \in X\right\}
-$
-is differentiable at $t=x_{0, i}$. Its derivative $g^{\prime}\left(x_{0, i}\right)$ at $x_{0, i}$ is denoted
-$$
-\frac{\partial f}{\partial x_{i}}\left(x_{0}\right), \quad \partial_{x_{i}} f\left(x_{0}\right), \quad \partial_{i} f\left(x_{0}\right)
-$$}
+    \definition{3.3.5}{Let $X \subset \Rn$ be an open set. Let $f: X \rightarrow \Rm$ be a function. Let $1 \leqslant i \leqslant n$. We say that $f$ has a \textbf{partial derivative} on $X$ with respect to the $i$-th variable, or coordinate, if for all $x_{0}=\left(x_{0,1}, \ldots, x_{0, n}\right) \in X$, the function defined by
+    $$
+        g(t)=f\left(x_{0,1}, \ldots, x_{0, i-1}, t, x_{0, i+1}, \ldots, x_{0, n}\right)
+    $$
+    on the set
+    $
+        I=\left\{t \in \R:\left(x_{0,1}, \ldots, x_{0, i-1}, t, x_{0, i+1}, \ldots, x_{0, n}\right) \in X\right\}
+    $
+    is differentiable at $t=x_{0, i}$. Its \textbf{derivative} $g^{\prime}\left(x_{0, i}\right)$ at $x_{0, i}$ is denoted
+    $$
+        \frac{\partial f}{\partial x_{i}}\left(x_{0}\right), \quad \partial_{x_{i}} f\left(x_{0}\right), \quad \partial_{i} f\left(x_{0}\right)
+    $$}
 
-\prop{3.3.7.}{Consider $X \subset \mathbf{R}^{n}$ open and $f, g$ functions from $X$ to $\mathbf{R}^{m}$. Let $1 \leqslant i \leqslant n$.
-(1) If $f$ and $g$ have partial derivatives with respect to the $i$-th coordinate on $X$, then $f+g$ also does, and
-$$
-\partial_{x_{i}}(f+g)=\partial_{x_{i}}(f)+\partial_{x_{i}}(g) .
-$$
-(2) If $m=1$, and if $f$ and $g$ have partial derivatives with respect to the $i$-th coordinate on $X$, then $f g$ also does and
-$$
-\partial_{x_{i}}(f g)=\partial_{x_{i}}(f) g+f \partial_{x_{i}}(g) .
-$$
-Furthermore, if $g(x) \neq 0$ for all $x \in X$, then $f / g$ has a partial derivative with respect to the $i$-th coordinate on $X$, with
-$$
-\partial_{x_{i}}(f / g)=\left(\partial_{x_{i}}(f) g-f \partial_{x_{i}}(g)\right) / g^{2} .
-$$}
+    \prop{3.3.7.}{Consider $X \subset \Rn$ open and $f, g$ functions from $X$ to $\Rm$. Let $1 \leqslant i \leqslant n$.
+        (1) If $f$ and $g$ have partial derivatives with respect to the $i$-th coordinate on $X$, then $f+g$ also does, and
+        $$
+            \partial_{x_{i}}(f+g)=\partial_{x_{i}}(f)+\partial_{x_{i}}(g) .
+        $$
+        (2) If $m=1$, and if $f$ and $g$ have partial derivatives with respect to the $i$-th coordinate on $X$, then $f g$ also does and
+        $$
+            \partial_{x_{i}}(f g)=\partial_{x_{i}}(f) g+f \partial_{x_{i}}(g) .
+        $$
+        Furthermore, if $g(x) \neq 0$ for all $x \in X$, then $f / g$ has a partial derivative with respect to the $i$-th coordinate on $X$, with
+        $$
+            \partial_{x_{i}}(f / g)=\left(\partial_{x_{i}}(f) g-f \partial_{x_{i}}(g)\right) / g^{2} .
+        $$}
 
-\definition{3.3.9.}{Let $X \subset \mathbf{R}^{n}$ open and $f: X \rightarrow \mathbf{R}^{m}$ a function with partial derivatives on $X$. Write
-$$
-f(x)=\left(f_{1}(x), \ldots, f_{m}(x)\right) .
-$$
-For any $x \in X$, the matrix
-$$
-J_{f}(x)=\left(\partial_{x_{j}} f_{i}(x)\right)_{1 \leqslant i \leqslant m \atop 1 \leqslant j \leqslant n}
-$$
-with $m$ rows and $n$ columns is called the Jacobi matrix of $f$ at $x$.}
+    \definition{3.3.9. (Jacobi matrix)}{Let $X \subset \Rn$ open and $f: X \rightarrow \Rm$ a function with partial derivatives on $X$. Write
+        $$
+            f(x)=\left(f_{1}(x), \ldots, f_{m}(x)\right) .
+        $$
+        For any $x \in X$, the matrix
+        $$
+            J_{f}(x)=\left(\partial_{x_{j}} f_{i}(x)\right)_{1 \leqslant i \leqslant m \atop 1 \leqslant j \leqslant n}
+        $$
+        with $m$ rows and $n$ columns is called the \textbf{Jacobi matrix} of $f$ at $x$.}
+
+    \definition{3.3.11 (Gradient, Divergence)}{Let $X \subset \Rn$ be open.
+        (1) Let $f: X \rightarrow \R$ be a function. If all partial derivatives of $f$ exist at $x_{0} \in X$, then the column vector
+        $$
+            \left(\begin{array}{c}
+                    \partial_{x_{1}} f\left(x_{0}\right) \\
+                    \cdots                               \\
+                    \partial_{x_{n}} f\left(x_{0}\right)
+                \end{array}\right)
+        $$
+        is called the \textbf{gradient} at $x_{0}$, and is denoted $\nabla f\left(x_{0}\right)$.
+        (2) Let $f=\left(f_{1}, \ldots, f_{n}\right): X \rightarrow \Rn$ be a function with values in $\Rn$ such that all partial derivatives of all coordinates $f_{i}$ of $f$ exist at $x_{0} \in X$. Then the real number
+        $$
+            \operatorname{Tr}\left(J_{f}\left(x_{0}\right)\right)=\sum_{i=1}^{n} \partial_{x_{i}} f_{i}\left(x_{0}\right),
+        $$
+        the trace of the Jacobi matrix, is called the \textbf{divergence} of $f$ at $x_{0}$, and is denoted $\operatorname{div}(f)\left(x_{0}\right)$.}
+
+    \definition{3.4.2.}{Let $X \subset \Rn$ be open and $f: X \rightarrow \Rm$ be a function. Let $u$ be a linear map $\Rn \rightarrow \Rm$ and $x_{0} \in X$. We say that \textbf{$f$ is differentiable at $x_{0}$ with differential $u$} if
+    $$
+        \lim _{x \rightarrow x_{0}} \frac{1}{\left\|x-x_{0}\right\|}\left(f(x)-f\left(x_{0}\right)-u\left(x-x_{0}\right)\right)=0
+    $$
+    where the limit is in $\Rm$. We then denote $d f\left(x_{0}\right)=u$.
+    If $f$ is differentiable at every $x_{0} \in X$, then we say that $f$ is differentiable on $X$.}
+
+    \prop{3.4.4.}{Let $X \subset \Rn$ be open and $f: X \rightarrow \Rm$ be a function that is differentiable on $X$.
+    (1) The function $f$ is continuous on $X$.
+    (2) The function $f$ admits partial derivatives on $X$ with respect to each variable.
+    (3) Assume that $m=1$. Let $x_{0} \in X$, and let
+    $
+        u\left(x_{1}, \ldots, x_{n}\right)=a_{1} x_{1}+\cdots+a_{n} x_{n}
+    $
+    be the differential of $f$ at $x_{0}$. We then have
+    $
+        \partial_{x_{i}} f\left(x_{0}\right)=a_{i}
+    $
+    for $1 \leqslant i \leqslant n$.}
+
+
+    \prop{3.4.6.}{Let $X \subset \Rn$ be open, $f: X \rightarrow \Rm$ and $g: X \rightarrow \Rm$ differentiable functions on $X$.
+        (1) The function $f+g$ is differentiable with differential $d(f+g)=d f+d g$, and if $m=1$, then $f g$ is differentiable.
+        (2) If $m=1$ and if $g(x) \neq 0$ for all $x \in X$, then $f / g$ is differentiable.}
+
+
+    \prop{3.4.7.}{Let $X \subset \Rn$ be open, $f: X \rightarrow \Rm$ a function on $X .$ If $f$ has all partial derivatives on $X$, and if the partial derivatives of $f$ are continuous on $X$, then $f$ is differentiable on $X$, with differential determined by its partial derivatives, in the sense that the matrix of the differential $d f\left(x_{0}\right)$, with respect to the canonical basis of $\Rn$ and $\Rm$, is the Jacobi matrix of $f$ at $x_{0}$.}
+
+    \prop{3.4.9 (Chain rule)}{Let $X \subset \Rn$ be open, $Y \subset \Rm$ be open, and let $f: X \rightarrow Y$ and $g: Y \rightarrow \Rp$ be differentiable functions. Then $g \circ f: X \rightarrow \Rp$ is differentiable on $X$, and for any $x \in X$, its differential is given by the composition
+    $$
+        d(g \circ f)\left(x_{0}\right)=d g\left(f\left(x_{0}\right)\right) \circ d f\left(x_{0}\right) \text {. }
+    $$
+    In particular, the Jacobi matrix satisfies
+    $$
+        J_{g \circ f}\left(x_{0}\right)=J_{g}\left(f\left(x_{0}\right)\right) J_{f}\left(x_{0}\right)
+    $$
+    where the right-hand side is a matrix product.}
+
+    \definition{3.4.11.}{Let $X \subset \Rn$ be open and $f: X \rightarrow \Rm$ a function that is differentiable. Let $x_{0} \in X$ and $u=d f\left(x_{0}\right)$ be the differential of $f$ at $x_{0}$. The graph of the affine linear approximation
+        $$
+            g(x)=f\left(x_{0}\right)+u\left(x-x_{0}\right)
+        $$
+        from $\Rn$ to $\Rm$, or in other words the set
+        $$
+            \left\{(x, y) \in \Rn \times \Rm: y=f\left(x_{0}\right)+u\left(x-x_{0}\right)\right.
+        $$
+        is called the \textbf{tangent space} at $x_{0}$ to the graph of $f$.}
+
+    \definition{3.4.13.}{Let $X \subset \Rn$ be an open set and let $f: X \rightarrow \Rm$ be a function. Let $v \in \Rn$ be a non-zero vector and $x_{0} \in X$. We say that $f$ has \textbf{directional derivative $w \in \Rm$ in the direction $v$}, if the function $g$ defined on the set
+        $$
+            I=\left\{t \in \mathbf{R}: x_{0}+t v \in X\right\}
+        $$
+        by
+        $$
+            g(t)=f\left(x_{0}+t v\right)
+        $$
+        has a derivative at $t=0$, and this is equal to $w$.
+        In other words, this means that the limit
+        $$
+            \lim _{t \rightarrow 0 \atop t \neq 0} \frac{f\left(x_{0}+t v\right)-f\left(x_{0}\right)}{t}
+        $$
+        exists and is equal to $w$.}
+
+
+    \prop{3.4.15. }{Let $X \subset \Rn$ be an open set and let $f: X \rightarrow \Rm$ be a differentiable function. Then for any $x \in X$ and non-zero $v \in \Rn$, the function $f$ has a directional derivative at $x_{0}$ in the direction $v$, equal to df $\left(x_{0}\right)(v)$.}
+
+    \definition{3.5.1.}{Let $X \subset \Rn$ be open and $f: X \rightarrow \Rm$.
+        We say that $f$ is of class $C^{1}$ if $f$ is differentiable on $X$ and all its partial derivatives are continuous. The set of functions of class $C^{1}$ from $X$ to $\Rm$ is denoted $C^{1}\left(X ; \Rm\right)$.
+        Let $k \geqslant 2$. We say, by induction, that $f$ is of class $C^{k}$ if it is differentiable and each partial derivative $\partial_{x_{i}} f: X \rightarrow \Rm$ is of class $C^{k-1}$. The set of functions of class $C^{k}$ from $X$ to $\Rm$ is denoted $C^{k}\left(X ; \Rm\right)$.
+
+        If $f \in C^{k}\left(X ; \Rm\right)$ for all $k \geqslant 1$, then we say that $f$ is of class $C^{\infty}$. The set of such functions is denoted $C^{\infty}\left(X ; \Rm\right)$.}
+
+    \prop{3.5.4 (Mixed derivatives commute)}{
+        $k \geqslant 2$. Let $X \subset \mathbf{R}^{n}$ be open and let $f: X \rightarrow \mathbf{R}^{m}$ be a function of class $C^{k}$. Then the partial derivatives of order $k$ are independent of the order in which the partial derivatives are taken: for any variables $x$ and $y$, we have
+        $
+            \partial_{x, y} f=\partial_{y, x} f
+        $
+        and for any variables $x, y, z$, we have
+        $$
+            \partial_{x, y, z} f=\partial_{x, z, y} f=\partial_{y, z, x} f=\partial_{z, x, y} f=\cdots
+        $$
+    }
+
+    \definition{3.5.9 (Hessian).}{Let $X \subset \mathbf{R}^{n}$ be open and $f: X \rightarrow \mathbf{R}$ a $C^{2}$ function. For $x \in X$, the \textbf{Hessian matrix} of $f$ at $x$ is the symmetric square matrix
+    $$
+        \operatorname{Hess}_{f}(x)=\left(\partial_{x_{i}, x_{j}} f\right)_{1 \leqslant i, j \leqslant n} .
+    $$
+    We also sometimes write simply $H_{f}(x)$.}
 \end{multicols*}
+
+
+
 \end{document}
