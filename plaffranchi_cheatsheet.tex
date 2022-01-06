@@ -259,7 +259,7 @@
 
     \definition{3.4.13.}{Let $X \subset \Rn$ be an open set and let $f: X \rightarrow \Rm$ be a function. Let $v \in \Rn$ be a non-zero vector and $x_{0} \in X$. We say that $f$ has \textbf{directional derivative $w \in \Rm$ in the direction $v$}, if the function $g$ defined on the set
         $$
-            I=\left\{t \in \mathbf{R}: x_{0}+t v \in X\right\}
+            I=\left\{t \in \R: x_{0}+t v \in X\right\}
         $$
         by
         $$
@@ -282,7 +282,7 @@
         If $f \in C^{k}\left(X ; \Rm\right)$ for all $k \geqslant 1$, then we say that $f$ is of class $C^{\infty}$. The set of such functions is denoted $C^{\infty}\left(X ; \Rm\right)$.}
 
     \prop{3.5.4 (Mixed derivatives commute)}{
-        $k \geqslant 2$. Let $X \subset \mathbf{R}^{n}$ be open and let $f: X \rightarrow \mathbf{R}^{m}$ be a function of class $C^{k}$. Then the partial derivatives of order $k$ are independent of the order in which the partial derivatives are taken: for any variables $x$ and $y$, we have
+        $k \geqslant 2$. Let $X \subset \Rn$ be open and let $f: X \rightarrow \R^{m}$ be a function of class $C^{k}$. Then the partial derivatives of order $k$ are independent of the order in which the partial derivatives are taken: for any variables $x$ and $y$, we have
         $
             \partial_{x, y} f=\partial_{y, x} f
         $
@@ -292,11 +292,105 @@
         $$
     }
 
-    \definition{3.5.9 (Hessian).}{Let $X \subset \mathbf{R}^{n}$ be open and $f: X \rightarrow \mathbf{R}$ a $C^{2}$ function. For $x \in X$, the \textbf{Hessian matrix} of $f$ at $x$ is the symmetric square matrix
+    \definition{3.5.9 (Hessian).}{Let $X \subset \Rn$ be open and $f: X \rightarrow \R$ a $C^{2}$ function. For $x \in X$, the \textbf{Hessian matrix} of $f$ at $x$ is the symmetric square matrix
+        $$
+            \operatorname{Hess}_{f}(x)=\left(\partial_{x_{i}, x_{j}} f\right)_{1 \leqslant i, j \leqslant n} .
+        $$
+        We also sometimes write simply $H_{f}(x)$.}
+
+    \definition{3.7.1 (Taylor polynomials).}{Let $k \geqslant 1$ be an integer. Let $f: X \rightarrow \R$ be a function of class $C^{k}$ on $X$, and fix $x_{0} \in X$. The $k$-th Taylor polynomial of $f$ at the point $x_{0}$ is the polynomial in $n$ variables of degree $\leqslant k$ given by
+        $$
+            \begin{aligned}
+                T_{k} f\left(y ; x_{0}\right)= & f\left(x_{0}\right) +\sum_{i=1}^{n} \frac{\partial f}{\partial x_{i}}\left(x_{0}\right) y_{i}+\cdots                                                                                           \\
+                                               & +\sum_{m_{1}+\cdots+m_{n}=k} \frac{1}{m_{1} ! \cdots m_{n} !} \frac{\partial^{k} f}{\partial x_{1}^{m_{1}} \cdots \partial x_{n}^{m_{n}}}\left(x_{0}\right) y_{1}^{m_{1}} \cdots y_{n}^{m_{n}}
+            \end{aligned}
+        $$
+        where the last sum ranges over the tuples of $n$ non-negative integers such that the sum is $k$.}
+
+    \prop{3.7.3 (Taylor approximation)}{Let $k \geqslant 1$ be an integer. Let $X \subset \Rn$ be open and $f: X \rightarrow \R$ be a function of class $C^{k}$. For $x_{0}$ in $X$, if we define $E_{k} f\left(x ; x_{0}\right)$ by
     $$
-        \operatorname{Hess}_{f}(x)=\left(\partial_{x_{i}, x_{j}} f\right)_{1 \leqslant i, j \leqslant n} .
+        f(x)=T_{k} f\left(x-x_{0} ; x_{0}\right)+E_{k} f\left(x ; x_{0}\right)
     $$
-    We also sometimes write simply $H_{f}(x)$.}
+    then we have
+    $$
+        \lim _{x \rightarrow x_{0} \atop x \neq x_{0}} \frac{E_{k} f\left(x ; x_{0}\right)}{\left\|x-x_{0}\right\|^{k}}=0
+    $$}
+
+    \prop{3.8.1.}{Let $X \subset \Rn$ be open and $f: X \rightarrow \R$ a differentiable function. If $x_{0} \in X$ is such that
+        $f(y) \leqslant f\left(x_{0}\right)$ for all $y$ close enough to $x_{0}$ (local maximum at $x_{0}$ )
+        or $f(y) \geqslant f\left(x_{0}\right)$ for all $y$ close enough to $x_{0}$ (local minimum at $x_{0}$ ).
+        Then we have $d f\left(x_{0}\right)=0$, or in other words $\nabla f\left(x_{0}\right)=0$, or equivalently
+        $
+            \frac{\partial f}{\partial x_{i}}\left(x_{0}\right)=0
+        $
+        for $1 \leqslant i \leqslant n$.}
+
+
+    \definition{3.8.2 (Critical point)}{Let $X \subset \Rn$ be open and $f: X \rightarrow \R$ a differentiable function. A point $x_{0} \in X$ such that $\nabla f\left(x_{0}\right)=0$ is called a \textbf{critical point} of the function $f$.}
+
+    \definition{3.8.6 (Non-degenerate critical point)}{Let $X \subset \Rn$ be open and $f: X \rightarrow$ $\Rn$ a function of class $C^{2}$. A critical point $x_{0} \in X$ of $f$ is called \textbf{non-degenerate} if the Hessian matrix has non-zero determinant.}
+
+
+    \corollary{3.8}{
+        Let $X \subset \Rn$ be open and $f: X \rightarrow \R$ a function of class $C^{2}$. Let $x_{0}$ be a non-degenerate critical point of $f .$ Let $p$ and $q$ be the number of positive and negative eigenvalues of Hess $_{f}\left(x_{0}\right)$. (1) If $p=n$, equivalently if $q=0$, the function $f$ has a local minimum at $x_{0}$. (2) If $q=n$, equivalently if $p=0$, the function $f$ has a local maximum at $x_{0}$. (3) Otherwise, equivalently if $p q \neq 0$, the function $f$ does not have a local extremum at $x_{0}$. One then says that $f$ has a saddle point at $x_{0}$.
+    }
+
+    \prop{3.9.2}{
+        Let $X \subset \Rn$ be open and let $f: X \rightarrow \R$ and $g: X \rightarrow \R$ be functions of class $C^{1}$. If $x_{0} \in X$ is a local extremum of the function $f$ restricted to the set
+        $
+            Y=\{x \in X: g(x)=0\}
+        $
+        then either $\nabla g\left(x_{0}\right)=0$, or there exists $\lambda_{0} \in \R$ such that
+        $$
+            \left\{\begin{array}{l}
+                \nabla f\left(x_{0}\right)=\lambda \nabla g\left(x_{0}\right) \\
+                g\left(x_{0}\right)=0
+            \end{array}\right.
+        $$
+        or in other words, there exists $\lambda$ such that $\left(x_{0}, \lambda\right)$ is a critical point of the differentiable function $h: X \times \R \rightarrow \R$ defined by
+        $
+            h(x, \lambda)=f(x)-\lambda g(x) .
+        $
+        Such a value $\lambda$ is called a Lagrange multiplier at $x_{0}$.
+    }
+
+    \definition{3.10.1 (Change of variable)}{
+    Let $X \subset \Rn$ be open and $f: X \rightarrow \Rn$ be differentiable. Let $x_{0} \in X$. We say that $f$ is a \textbf{change of variable} around $x_{0}$ if there is a radius $r>0$ such that the restriction of $f$ to the ball
+    $$
+        B=\left\{x \in \Rn:\left\|x-x_{0}\right\|<r\right\}
+    $$
+    of radius $r$ around $x_{0}$ has the property that the image $Y=f(B)$ is open in $\Rn$, and if there is a differentiable map $g: Y \rightarrow B$ such that $f \circ g=\operatorname{Id}_{Y}$ and $g \circ f=\operatorname{Id}_{B}$.
+    }
+
+    \theorem{3.10.2 (Inverse funtion theorem)} {
+    (Inverse function theorem). Let $X \subset \Rn$ be open and $f: X \rightarrow \Rn$
+    differentiable. If $x_{0} \in X$ is such that $\operatorname{det}\left(J_{f}\left(x_{0}\right)\right) \neq 0$, i.e., such that the Jacobian
+    trix of $f$ at $x_{0}$ is invertible, then $f$ is a change of variable around $x_{0}$. Moreover, the Jacobian of $g$ at $x_{0}$ is determined by
+    $$
+        J_{g}\left(f\left(x_{0}\right)\right)=J_{f}\left(x_{0}\right)^{-1}
+    $$
+    In addition, if $f$ is of class $C^k$, then $g$ is of class $C^k$.
+    }
+
+    \theorem{3.10.4 (Implicit Function Theorem).}{Let $X \subset \mathbf{R}^{n+1}$ be open and let $g: X \rightarrow \mathbf{R}$ be of class $C^{k}$ with $k \geqslant 1$. Let $\left(x_{0}, y_{0}\right) \in \mathbf{R}^{n} \times \mathbf{R}$ be such that $g\left(x_{0}, y_{0}\right)=0$. Assume that
+$$
+\partial_{y} g\left(x_{0}, y_{0}\right) \neq 0
+$$
+Then there exists an open set $U \subset \mathbf{R}^{n}$ containing $x_{0}$, an open interval $I \subset \mathbf{R}$ containing $y_{0}$, and a function $f: U \rightarrow \mathbf{R}$ of class $C^{k}$ such that the system of equations
+$$
+\left\{\begin{array}{l}
+g(x, y)=0 \\
+x \in U, \quad y \in I
+\end{array}\right.
+$$
+is equivalent with $y=f(x)$. In particular, $f\left(x_{0}\right)=y_{0}$. Moreover, the gradient of $f$ at $x_{0}$ is given by
+$$
+\nabla f\left(x_{0}\right)=-\frac{1}{\left(\partial_{y} g\right)\left(x_{0}, y_{0}\right)} \nabla_{x} g\left(x_{0}, y_{0}\right)
+$$
+where $\nabla_{x} g=\left(\partial_{x_{1}} g, \ldots, \partial_{x_{n}} g\right)$}
+
+
+
 \end{multicols*}
 
 
