@@ -489,8 +489,11 @@
 
     \other{Riemann integral's properties}{
         \begin{enumerate}[label=(\arabic*)]
-            \item Linearity
-            \item Positivity
+            \item \textbf{Linearity}
+            \item \textbf{Positivity} Let $f,g: A \to \R$ integrable with $f\leqslant g$. Then it follows $$\int_Af(x,y)d(x,y) \leqslant \int_Ag(x,y)d(x,y).$$ Furthermore, if $f\geqslant 0$, $B\subset A$ and $f$ on $B$ integrable:$$\int_Bf(x,y)d(x,y) \leqslant \int_Af(x,y)d(x,y).$$
+            \item \textbf{Triangular inequality} Let $f:A\to \R$ integrable (in particular, restricted), then is $|f|$ integrable and $$\left|\int_Af(x,y)d(x,y)\right|\leqslant \int_A\left|f(x,y)\right|d(x,y)$$ 
+            \item \textbf{Volume} Let $\mathcal{R} = [a,b]\times [c,d]$, then $\int_\mathcal{R}d(x,y) = (b-a)(d-c)$.
+            \item \textbf{(O. Stolz 1886)}  Let $f:\mathcal{R}\to \R$ on $\mathcal{R} = [a,b]\times [c,d]$ integrable. We assume that $y\mapsto f(x,y)\ \forall x\in[a,b]$ is integrable on $[c,d]$. This emplies that $$ x\mapsto \int_c^df(x,y)dy$$ is integrable on $[a,b]$, and $$\int_\mathcal{R} f(x,y)d(x,y) = \int_a^b\left(\int_c^df(x,y)dy\right)dx$$
         \end{enumerate}
     }
     
