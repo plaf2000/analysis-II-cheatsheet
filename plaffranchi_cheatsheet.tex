@@ -466,8 +466,8 @@
     % This part relise on the lectures, rather then the script.
 
     \definition{Integral on a rectangle}{
-    Let $\mathcal{R} = [a,b]\times [c,d]$ a compact rectangle in $\R^2$. Let $f:\mathcal{R} \to \R$  be restricted, s.t. $\exists M \geqslant 0, \forall (x,y)\in \R, |f(x,y)|\leqslant M$.
-    For each partition $P_x$ with $x_0 = a<x_1<\dots <x_n=b$ of $[a,b]$ and $P_y$ with $y_0 = c < y_1 < \dots <y_n = d$ of $[c,d]$, we can subdivide $\mathcal{R}$ into rectangles $\mathcal{R}_{ij} = [x_{i-1},x_i]\times [y_{j-1},y_j]$ with area $\mu(\mathcal{R}_{ij}) = (x_i-x_{i-1})(y_j-y_{j-1})$.\\
+    Let $R = [a,b]\times [c,d]$ a compact rectangle in $\R^2$. Let $f:R \to \R$  be restricted, s.t. $\exists M \geqslant 0, \forall (x,y)\in \R, |f(x,y)|\leqslant M$.
+    For each partition $P_x$ with $x_0 = a<x_1<\dots <x_n=b$ of $[a,b]$ and $P_y$ with $y_0 = c < y_1 < \dots <y_n = d$ of $[c,d]$, we can subdivide $R$ into rectangles $R_{ij} = [x_{i-1},x_i]\times [y_{j-1},y_j]$ with area $\mu(R_{ij}) = (x_i-x_{i-1})(y_j-y_{j-1})$.\\
     Let $$f_{ij} = \inf_{I_{ij}}f(x,y),\ F_{ij} = \sup_{I_{ij}}f(x,y)$$.
     We can then define an upper and a lower sum, respectively:
     \begin{align*}
@@ -477,14 +477,14 @@
     }
 
     \definition{Riemann integrable in $\R^2$}{
-        Let $f: \mathcal{R}\to \R$ restricted. Then is $f$ integrable on $\mathcal{R}$ if $$\sup_{(P_x,P_y)} s(P_x\times P_y)=\inf_{(P_x,P_y)}  S(P_x\times P_y).$$
+        Let $f: R\to \R$ restricted. Then is $f$ integrable on $R$ if $$\sup_{(P_x,P_y)} s(P_x\times P_y)=\inf_{(P_x,P_y)}  S(P_x\times P_y).$$
         This value is defined as $$
-            \int_\mathcal{R}f(x,y)d(x,y) \text{ or } \underset{\mathcal{R}}{\int \int} f(x,y)d(x,y).
+            \int_Rf(x,y)d(x,y) \text{ or } \underset{R}{\int \int} f(x,y)d(x,y).
         $$
     }
 
     \definition{Riemann integrable and characteristical funciton}{
-        $f$ is on $A$ integrable if $f\cdot \mathcal{X_A}$ is integrable on $\mathcal{R}$ , where $\mathcal{X_A}$ is the characteristical polynomial of $f$. We then write $\int_A f(x,y)d(x,y)$ for $\int_\mathcal{R} f(x,y) \mathcal{X}_A(x,y)d(x,y)$.
+        $f$ is on $A$ integrable if $f\cdot \mathcal{X_A}$ is integrable on $R$ , where $\mathcal{X_A}$ is the characteristical polynomial of $f$. We then write $\int_A f(x,y)d(x,y)$ for $\int_R f(x,y) \mathcal{X}_A(x,y)d(x,y)$.
     }
 
     \other{Riemann integral's properties}{
@@ -492,10 +492,36 @@
             \item \textbf{Linearity}
             \item \textbf{Positivity} Let $f,g: A \to \R$ integrable with $f\leqslant g$. Then it follows $$\int_Af(x,y)d(x,y) \leqslant \int_Ag(x,y)d(x,y).$$ Furthermore, if $f\geqslant 0$, $B\subset A$ and $f$ on $B$ integrable:$$\int_Bf(x,y)d(x,y) \leqslant \int_Af(x,y)d(x,y).$$
             \item \textbf{Triangular inequality} Let $f:A\to \R$ integrable (in particular, restricted), then is $|f|$ integrable and $$\left|\int_Af(x,y)d(x,y)\right|\leqslant \int_A\left|f(x,y)\right|d(x,y)$$ 
-            \item \textbf{Volume} Let $\mathcal{R} = [a,b]\times [c,d]$, then $\int_\mathcal{R}d(x,y) = (b-a)(d-c)$.
-            \item \textbf{(O. Stolz 1886)}  Let $f:\mathcal{R}\to \R$ on $\mathcal{R} = [a,b]\times [c,d]$ integrable. We assume that $y\mapsto f(x,y)\ \forall x\in[a,b]$ is integrable on $[c,d]$. This emplies that $$ x\mapsto \int_c^df(x,y)dy$$ is integrable on $[a,b]$, and $$\int_\mathcal{R} f(x,y)d(x,y) = \int_a^b\left(\int_c^df(x,y)dy\right)dx$$
+            \item \textbf{Volume} Let $R = [a,b]\times [c,d]$, then $\int_Rd(x,y) = (b-a)(d-c)$.
+            \item \textbf{(O. Stolz 1886)}  Let $f:R\to \R$ on $R = [a,b]\times [c,d]$ integrable. We assume that $y\mapsto f(x,y)\ \forall x\in[a,b]$ is integrable on $[c,d]$. This emplies that $$ x\mapsto \int_c^df(x,y)dy$$ is integrable on $[a,b]$, and $$\int_R f(x,y)d(x,y) = \int_a^b\left(\int_c^df(x,y)dy\right)dx$$
         \end{enumerate}
     }
+        
+    \prop{3.30 (lecture)}{
+        Let $R = [a,b]\times [c,d]$ be a compact rectangle and $f:R\to \R$ continuous. Then is $f$ on $R$ integrable.
+    }
+
+    \prop{3.31 (lecture)}{
+        Let $K\subset \R^2$ a compact subset and $f:K\to \R$ continuous. Then is $f$ uniformly continuous.
+    }
+
+    \definition{3.32 (null set, lecture)}{
+        Let $X\subset R\subset \R^2$. Then $X$ is a null set (in $\R^2$) if $\forall\epsilon > 0$ there are finite many rectangles $R_k = [a_k,b_k]\times [c_k,d_k]$ with $1\leqslant k \leqslant n$, s.t. $$Y\subset \bigcup_{k=1}^nR_k,\quad \sum_{k=1}^n{\mu(R_k)}<\epsilon$$
+    }
+
+    \lemma{3.33 (lecture)}{
+        Let $y:[0,1] \to \R^2$ a Lipschitz curve, so that $$
+            \left\|\varphi(s) - \varphi(t)\right\| \leqslant M\cdot|s-t|\quad \forall s,t\in[0,1]
+        $$
+        Then is the image $\varphi([0,1])\subset \R^2$ a null set.
+    }
+    
+
+    \prop{3.35 (lecture)}{
+        Let $f:R\to \R$ limited. Let $$X=\left\{(x,y)\in \R: f\text{ is in } (x,y) \text{ not continuous}\right\}$$
+        If $X$ is a null set, then $f$ is not integrable on $R$.
+    }
+
     
 \end{multicols*}
 
