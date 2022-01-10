@@ -534,24 +534,30 @@
         Let $\varphi:[a,b] \to \R$ continuous. Then is the $graph(\varphi) = \left\{(x,\varphi(x),x\in [a,b]\right\} \subset \R^2$ a null set.
     }
 
+    \definition{Border (Rand)}{
+        Let $A\in \R^2$ the \textbf{border} (\textit{Rand} in German) is defined as 
+        $$
+            \partial A = \left\{(x,y)\in \R^2:\forall\delta>0\ % \\
+            C_\delta(x,y)\cap A \neq \emptyset%\\
+            \land  C_\delta(x,y)\cap \left(\R^2\setminus A\right) \neq \emptyset\right\}    
+        $$
+        where $C_\delta(x,y)=]x-\delta, x+\delta[\times]y-\delta,y+\delta[$.
+
+    }
+
     \theorem{4.4.2 (Change of variable formula).}{
-        Let $U \subset \R^2$ and $\bar{Y} \subset \Rn$ be compact subsets. Let $\varphi:U \rightarrow \R^2$ be a continuous map in $C^1$ and $f:A\subset \R^2 \to \R$ a continuous function. Furthermore $B \subset U$. We assume
+        Let $U \subset \R^2$ be compact subsets. Let $\varphi:U \rightarrow \R^2$ be a continuous map in $C^1$ and $f:A\subset \R^2 \to \R$ a continuous function. Furthermore $B \subset U$. We assume
         \begin{enumerate}[label=(\arabic*)]
             \item $\varphi(B)=A$; $A,B$ compact; $\partial A, \partial B$ null sets.
-            \item $\varphi: B\ $
-            \item the restriction of $\varphi$ to the open set $X$ is a $C^{1}$ bijective map from $X$ to $Y$. 
+            \item $\varphi: B\setminus N \to A$ is injective, where $N\subset B$ is a null set. 
         \end{enumerate}
-   
-    
-    for any continuous function $f$ on $\bar{Y}$, we have
+        Then it follows:
         $$
-            \int_{\bar{X}} f(\varphi(x))\left|\operatorname{det}\left(J_{\varphi}(x)\right)\right| d x=\int_{\bar{Y}} f(y) d y .
+        \int_{A} f(x,y) d(x,y)=\int_{B}f(\varphi(u,v))\left|\operatorname{det}\left(J_{\varphi}(u,v)\right)\right| d(u,v).
         $$
     }
 
 
 \end{multicols*}
-
-
-
+ 
 \end{document}
