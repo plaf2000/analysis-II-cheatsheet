@@ -491,14 +491,14 @@
         \begin{enumerate}[label=(\arabic*)]
             \item \textbf{Linearity}
             \item \textbf{Positivity} Let $f,g: A \to \R$ integrable with $f\leqslant g$. Then it follows $$\int_Af(x,y)d(x,y) \leqslant \int_Ag(x,y)d(x,y).$$ Furthermore, if $f\geqslant 0$, $B\subset A$ and $f$ on $B$ integrable:$$\int_Bf(x,y)d(x,y) \leqslant \int_Af(x,y)d(x,y).$$
-            \item \textbf{Triangular inequality} Let $f:A\to \R$ integrable (in particular, restricted), then is $|f|$ integrable and $$\left|\int_Af(x,y)d(x,y)\right|\leqslant \int_A\left|f(x,y)\right|d(x,y)$$ 
+            \item \textbf{Triangular inequality} Let $f:A\to \R$ integrable (in particular, restricted), then is $|f|$ integrable and $$\left|\int_Af(x,y)d(x,y)\right|\leqslant \int_A\left|f(x,y)\right|d(x,y)$$
             \item \textbf{Volume} Let $R = [a,b]\times [c,d]$, then $\int_Rd(x,y) = (b-a)(d-c)$.
             \item \textbf{(O. Stolz 1886)}  Let $f:R\to \R$ on $R = [a,b]\times [c,d]$ integrable. We assume that $y\mapsto f(x,y)\ \forall x\in[a,b]$ is integrable on $[c,d]$. This emplies that $$ x\mapsto \int_c^df(x,y)dy$$ is integrable on $[a,b]$, and $$\int_R f(x,y)d(x,y) = \int_a^b\left(\int_c^df(x,y)dy\right)dx$$
         \end{enumerate}
     }
-        
+
     \prop{3.30 (lecture)}{
-        Let $R = [a,b]\times [c,d]$ be a compact rectangle and $f:R\to \R$ continuous. Then is $f$ on $R$ integrable.
+    Let $R = [a,b]\times [c,d]$ be a compact rectangle and $f:R\to \R$ continuous. Then is $f$ on $R$ integrable.
     }
 
     \prop{3.31 (lecture)}{
@@ -506,23 +506,50 @@
     }
 
     \definition{3.32 (null set, lecture)}{
-        Let $X\subset R\subset \R^2$. Then $X$ is a null set (in $\R^2$) if $\forall\epsilon > 0$ there are finite many rectangles $R_k = [a_k,b_k]\times [c_k,d_k]$ with $1\leqslant k \leqslant n$, s.t. $$Y\subset \bigcup_{k=1}^nR_k,\quad \sum_{k=1}^n{\mu(R_k)}<\epsilon$$
+    Let $X\subset R\subset \R^2$. Then $X$ is a null set (in $\R^2$) if $\forall\epsilon > 0$ there are finite many rectangles $R_k = [a_k,b_k]\times [c_k,d_k]$ with $1\leqslant k \leqslant n$, s.t. $$Y\subset \bigcup_{k=1}^nR_k,\quad \sum_{k=1}^n{\mu(R_k)}<\epsilon$$
     }
 
     \lemma{3.33 (lecture)}{
-        Let $y:[0,1] \to \R^2$ a Lipschitz curve, so that $$
+        Let $\varphi:[0,1] \to \R^2$ a Lipschitz curve, so that $$
             \left\|\varphi(s) - \varphi(t)\right\| \leqslant M\cdot|s-t|\quad \forall s,t\in[0,1]
         $$
         Then is the image $\varphi([0,1])\subset \R^2$ a null set.
     }
-    
+
 
     \prop{3.35 (lecture)}{
         Let $f:R\to \R$ limited. Let $$X=\left\{(x,y)\in \R: f\text{ is in } (x,y) \text{ not continuous}\right\}$$
         If $X$ is a null set, then $f$ is not integrable on $R$.
     }
 
+    \prop{3.36 (lecture)}{
+        Let $\varphi_1, \varphi_2: [a,b] \to \R$ continuous with $\varphi_1\leqslant\varphi_2\  \forall x\in [a,b]$. Let $A = \left\{(x,y):a\leqslant x \leqslant b, \varphi_1(x)\leqslant y \leqslant \varphi_2(x) \right\}$.
+        Let $f:A\to \R$ continuous. Then is $f$ on $A$ integrable and it holds:
+        $$
+            \int_Af(x,y)d(x,y) = \int_a^bdx\int_{\varphi_1(x)}^{\varphi_2(x)}f(x,y)dy.
+        $$
+    }
+
+    \lemma{3.37 (lecture)}{
+        Let $\varphi:[a,b] \to \R$ continuous. Then is the $graph(\varphi) = \left\{(x,\varphi(x),x\in [a,b]\right\} \subset \R^2$ a null set.
+    }
+
+    \theorem{4.4.2 (Change of variable formula).}{
+        Let $U \subset \R^2$ and $\bar{Y} \subset \Rn$ be compact subsets. Let $\varphi:U \rightarrow \R^2$ be a continuous map in $C^1$ and $f:A\subset \R^2 \to \R$ a continuous function. Furthermore $B \subset U$. We assume
+        \begin{enumerate}[label=(\arabic*)]
+            \item $\varphi(B)=A$; $A,B$ compact; $\partial A, \partial B$ null sets.
+            \item $\varphi: B\ $
+            \item the restriction of $\varphi$ to the open set $X$ is a $C^{1}$ bijective map from $X$ to $Y$. 
+        \end{enumerate}
+   
     
+    for any continuous function $f$ on $\bar{Y}$, we have
+        $$
+            \int_{\bar{X}} f(\varphi(x))\left|\operatorname{det}\left(J_{\varphi}(x)\right)\right| d x=\int_{\bar{Y}} f(y) d y .
+        $$
+    }
+
+
 \end{multicols*}
 
 
