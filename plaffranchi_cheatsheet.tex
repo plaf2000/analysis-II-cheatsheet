@@ -557,6 +557,34 @@
         $$
     }
 
+    \other{Example, polar coordinates (lecture)}{
+        Let $\phi: \R^2\to\R^2; (r,\varphi)\mapsto(r\cos\varphi,r\sin\varphi)$. Then we can convert the integral in cartesian coordinates to polar coordinates in the following manner:
+        $$
+            \int_{x^2+y^2\leqslant R^2} f(x,y)d(x,y) = \int_0^{2\pi}\int_0^Rf(r\cos\varphi,r\sin\varphi)r d(r,\varphi)
+        $$
+    }
+
+    \definition{3.39 Jordan curve, orientation (lecture)}{
+        A \textbf{parameterized Jordan curve} is a parameterized curve $\gamma: [a,b] \to \R^2$ with the following properties
+        \begin{enumerate}
+            \item $\gamma(a)=\gamma(b)$
+            \item $\gamma: ]a,b] \to \R^2$ is injective
+            \item A Jordan curve in $\R^2$ is the image of a parameterized Jordan curve.
+        \end{enumerate}
+        Let $e_1=\begin{pmatrix}1\\0\end{pmatrix}$ and $e_2=\begin{pmatrix}0\\1\end{pmatrix}$. A base $(b_1,b_2)$ of $\R^2$ is positive oriented if for the distinct matrix $g\in M_{2,2}(\R)$ with $g(e_1)=b_1$ and $g(e_2)=b_2$, $\det(g)>0$. It is negative oriented if $det(g)<0$.
+    }
+
+    \definition{3.40 \textit{reguläres Gebiet} (lecture)}{
+        A \textit{reguläres Gebiet} is a open restricted subset $A\subset\R^2$ whose border $\partial A$ is a finite union of disjoint Jordan curves.
+        Each of this curve is called a border component of $A$.\\
+        Let $\gamma:[a,b]\to\R^2$ a parameterized Jordan curve so that $\gamma([a,b])$ is a border component of $A$. Then $\gamma$ is positive oriented relative to $A$ if $(n(t),\gamma'(t))$ is a positive oriented basis of $\R^2$, where $n(t)$ is the unitary vector orthogonal to $\gamma'(t)$ and pointing outwards (not to $A$).
+    }
+
+    \theorem{4.6.3 (3.41 lecture) Green's formula}{
+        Let $A\subset\R^2$ be a \textit{reguläres Gebiet} and $F:U\to \R^2; (x,y)\mapsto \begin{pmatrix}f_1(x,y)\\f_2(x,y)\end{pmatrix}$ a $C^1$ vector field, where $A\cup \partial A\subset U\in \R^2$. Then it holds
+        $$  \int_{A}\left(\frac{\partial f_{2}}{\partial x}-\frac{\partial f_{1}}{\partial y}\right) d (x,y) = \int_{\partial A} F(s)ds:=\sum_{i=1}^{k} \int_{\gamma_{i}} f \cdot d \vec{s}
+        $$
+    }
 
 \end{multicols*}
  
