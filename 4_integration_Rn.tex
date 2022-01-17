@@ -1,0 +1,215 @@
+\definition{4.1.1. (parameterized curve, line integral)}{
+    \begin{enumerate}[label=(\arabic*)]
+        \item Let $I=[a, b]$ be a closed and bounded interval in $\R$. Let $f(t)=\left(f_{1}(t), \ldots, f_{n}(t)\right)$
+              be a continuous function from $I$ to $\Rn$, i.e., $f_{i}$ is continuous for $1 \leqslant i \leqslant n$. Then we define
+              $$
+                  \int_{a}^{b} f(t) d t=\left(\int_{a}^{b} f_{1}(t), \ldots, \int_{a}^{b} f_{n}(t) d t\right) \in \Rn .
+              $$
+        \item A \textbf{parameterized curve} in $\Rn$ is a continuous map $\gamma:[a, b] \rightarrow \Rn$ that is piecewise $C^{1}$, i.e., there exists $k \geqslant 1$ and a partition
+              $$
+                  a=t_{0}<t_{1}<\cdots<t_{k-1}<t_{k}=b
+              $$
+              such that the restriction of $f$ to $] t_{j-1}, t_{j}\left[\right.$ is $C^{1}$ for $1 \leqslant j \leqslant k$. We say that $\gamma$ is a parameterized curve, or a path $\mathrm{x}$, between $\gamma(a)$ and $\gamma(b)$.
+        \item Let $\gamma:[a, b] \rightarrow \Rn$ be a parameterized curve. Let $X \subset \Rn$ be a subset containing the image of $\gamma$, and let $f: X \rightarrow \Rn$ be a continuous function. The integral
+              $$
+                  \int_{a}^{b} f(\gamma(t)) \cdot \gamma^{\prime}(t) d t \in \R
+              $$
+              is called the \textbf{line integral of $f$ along $\gamma$}. It is denoted
+              $$
+                  \int_{\gamma} f(s) \cdot d s, \quad \text { or } \quad \int_{\gamma} f(s) \cdot d \vec{s} .
+              $$
+    \end{enumerate}
+}
+
+\definition{4.1.4}{
+    Let $\gamma:[a, b] \rightarrow \Rn$ be a parameterized curve. An \textbf{oriented reparameterization} of $\gamma$ is a parameterized curve $\sigma:[c, d] \rightarrow \Rn$ such that $\sigma=\gamma \circ \varphi$, where $\varphi:[c, d] \rightarrow[a, b]$ is a continuous map, differentiable on $] a, b[$, that is strictly increasing and satisfies $\varphi(a)=c$ and $\varphi(b)=d$.
+}
+
+\prop{4.1.5.}{
+    Let $\gamma$ be a parameterized curve in $\Rn$ and $\sigma$ an oriented reparameterization of $\gamma$. Let $X$ be a set containing the image of $\gamma$, or equivalently the image of $\sigma$, and $f: X \rightarrow \Rn$ a continuous function. Then we have
+    $$
+        \int_{\gamma} f(s) \cdot d \vec{s}=\int_{\sigma} f(s) \cdot d \vec{s} .
+    $$
+}
+
+\definition{4.1.8}{
+    Let $X \subset \Rn$ and $f: X \rightarrow \Rn$ a continuous vector field. If, for any $x_{1}, x_{2}$ in $X$, the line integral
+    $
+        \int_{\gamma} f(s) \cdot d \vec{s}
+    $
+    is independent of the choice of a parameterized curve $\gamma$ in $X$ from $x_{1}$ to $x_{2}$, then we say that the vector field is conservative.
+}
+
+\lemma{3.14 (lecture)}{
+    A vectorfield $f:X\to \Rn$ is conservative $\iff$ for each parameterized curved $\gamma$ contained in $X$ it holds that $\int_\gamma f(s)d\vec{s}=0$.
+}
+
+\theorem{4.1.10}{
+    Let $X$ be an open set and $f$ a conservative vector field. Then there exists a $C^{1}$ function $g$ on $X$ such that $f=\nabla g$.
+
+    If any two points of $X$ can be joined by a parameterized curve, then $g$ is unique up to addition of a constant: if $\nabla g_{1}=f$, then $g-g_{1}$ is constant on $X$.
+}
+
+\definition{3.16 (path-connected space, potential) (lecture)}{
+    \begin{enumerate}[label=(\arabic*)]
+        \item An open set $X\subset \Rn$ is \textbf{path-connected} if for each pair of points in $X$ are the endpoints of a parameterized curve.
+        \item A function $g:X\to\R$ s.t. $\nabla g = f$ is called \textbf{potential} of $f$.
+    \end{enumerate}
+}
+
+
+
+\prop{4.1.13}{
+    Let $X \subset \Rn$ be an open set and $f: X \rightarrow \Rn$ a vector field of class $C^{1}$. Write
+    $
+        f(x)=\left(f_{1}(x), \ldots, f_{n}(x)\right) .
+    $
+    If $f$ is conservative, then we have
+    $$
+        \frac{\partial f_{i}}{\partial x_{j}}=\frac{\partial f_{j}}{\partial x_{i}}
+    $$
+    for any integers with $1 \leqslant i \neq j \leqslant n$.
+}
+
+\definition{4.1.15 (star shaped)}{
+    A subset $X\subset\Rn$ is \textbf{star shaped} if there exists $x_0 \in X$ such that, for alla $x\in X$, the line segment joining $x_0$ to $x$ is contained in $X$. We then also say that $X$ is \textbf{star-shaped around} $x_0$
+}
+
+\theorem{4.1.17}{
+    Let $X$ be a star-shaped open subset of $\Rn$. Let $f$ be a $C^1$ vector field s.t. $\frac{\partial f_{i}}{\partial x_{j}}=\frac{\partial f_{j}}{\partial x_{i}}$ on $X$ for all $i\neq j$ between 1 and $n$. Then the vector field $f$ is conservative.
+}
+
+\definition{4.1.20 (curl)}{
+    Definition 4.1.20. Let $X \subset \R^{3}$ be an open set and $f: X \rightarrow \R^{3}$ a $C^{1}$ vector field. Then the curl of $f$, denoted $\operatorname{curl}(f)$, is the continuous vector field on $X$ defined by
+    $$
+        \operatorname{curl}(f)=\left(\begin{array}{c}
+                \partial_{y} f_{3}-\partial_{z} f_{2} \\
+                \partial_{z} f_{1}-\partial_{x} f_{3} \\
+                \partial_{x} f_{2}-\partial_{y} f_{1}
+            \end{array}\right)
+    $$
+    where $f(x, y, z)=\left(f_{1}(x, y, z), f_{2}(x, y, z), f_{3}(x, y, z)\right)$.
+}
+
+% This part relise on the lectures, rather then the script.
+
+\definition{Integral on a rectangle}{
+    Let $R = [a,b]\times [c,d]$ a compact rectangle in $\R^2$. Let $f:R \to \R$  be bounded, s.t. $\exists M \geqslant 0, \forall (x,y)\in \R, |f(x,y)|\leqslant M$.
+    For each partition $P_x$ with $x_0 = a<x_1<\dots <x_n=b$ of $[a,b]$ and $P_y$ with $y_0 = c < y_1 < \dots <y_n = d$ of $[c,d]$, we can subdivide $R$ into rectangles $R_{ij} = [x_{i-1},x_i]\times [y_{j-1},y_j]$ with area $\mu(R_{ij}) = (x_i-x_{i-1})(y_j-y_{j-1})$.\\
+    Let $$f_{ij} = \inf_{I_{ij}}f(x,y),\ F_{ij} = \sup_{I_{ij}}f(x,y)$$.
+    We can then define an upper and a lower sum, respectively:
+    \begin{align*}
+        s(P_x\times P_y) & = \sum_{i=1}^n \sum_{j=1}^m f_{ij}\mu(I_{ij}) \\
+        S(P_x\times P_y) & = \sum_{i=1}^n \sum_{j=1}^m F_{ij}\mu(I_{ij})
+    \end{align*}
+}
+
+\definition{Riemann integrable in $\R^2$}{
+    Let $f: R\to \R$ bounded. Then is $f$ integrable on $R$ if $$\sup_{(P_x,P_y)} s(P_x\times P_y)=\inf_{(P_x,P_y)}  S(P_x\times P_y).$$
+    This value is defined as $$
+        \int_Rf(x,y)d(x,y) \text{ or } \underset{R}{\int \int} f(x,y)d(x,y).
+    $$
+}
+
+\definition{Riemann integrable and characteristical funciton}{
+    $f$ is on $A$ integrable if $f\cdot \mathcal{X_A}$ is integrable on $R$ , where $\mathcal{X_A}$ is the characteristical polynomial of $f$. We then write $\int_A f(x,y)d(x,y)$ for $\int_R f(x,y) \mathcal{X}_A(x,y)d(x,y)$.
+}
+
+\other{Riemann integral's properties}{
+    \begin{enumerate}[label=(\arabic*)]
+        \item \textbf{Linearity}
+        \item \textbf{Positivity} Let $f,g: A \to \R$ integrable with $f\leqslant g$. Then it follows $$\int_Af(x,y)d(x,y) \leqslant \int_Ag(x,y)d(x,y).$$ Furthermore, if $f\geqslant 0$, $B\subset A$ and $f$ on $B$ integrable:$$\int_Bf(x,y)d(x,y) \leqslant \int_Af(x,y)d(x,y).$$
+        \item \textbf{Triangular inequality} Let $f:A\to \R$ integrable (in particular, bounded), then is $|f|$ integrable and $$\left|\int_Af(x,y)d(x,y)\right|\leqslant \int_A\left|f(x,y)\right|d(x,y)$$
+        \item \textbf{Volume} Let $R = [a,b]\times [c,d]$, then $\int_Rd(x,y) = (b-a)(d-c)$.
+        \item \textbf{(O. Stolz 1886)}  Let $f:R\to \R$ on $R = [a,b]\times [c,d]$ integrable. We assume that $y\mapsto f(x,y)\ \forall x\in[a,b]$ is integrable on $[c,d]$. This implies that $$ x\mapsto \int_c^df(x,y)dy$$ is integrable on $[a,b]$, and $$\int_R f(x,y)d(x,y) = \int_a^b\left(\int_c^df(x,y)dy\right)dx$$
+    \end{enumerate}
+}
+
+\prop{3.30 (lecture)}{
+    Let $R = [a,b]\times [c,d]$ be a compact rectangle and $f:R\to \R$ continuous. Then is $f$ on $R$ integrable.
+}
+
+\prop{3.31 (lecture)}{
+    Let $K\subset \R^2$ a compact subset and $f:K\to \R$ continuous. Then is $f$ uniformly continuous.
+}
+
+\definition{3.32 (null set, lecture)}{
+    Let $X\subset R\subset \R^2$. Then $X$ is a null set (in $\R^2$) if $\forall\epsilon > 0$ there are finite many rectangles $R_k = [a_k,b_k]\times [c_k,d_k]$ with $1\leqslant k \leqslant n$, s.t. $$X\subset \bigcup_{k=1}^nR_k,\quad \sum_{k=1}^n{\mu(R_k)}<\epsilon$$
+}
+
+\lemma{3.33 (lecture)}{
+    Let $\varphi:[0,1] \to \R^2$ a Lipschitz curve, so that $$
+        \left\|\varphi(s) - \varphi(t)\right\| \leqslant M\cdot|s-t|\quad \forall s,t\in[0,1]
+    $$
+    Then is the image $\varphi([0,1])\subset \R^2$ a null set.
+}
+
+
+\prop{3.35 (lecture)}{
+    Let $f:R\to \R$ bounded. Let $$X=\left\{(x,y)\in \R: f\text{ is in } (x,y) \text{ not continuous}\right\}$$
+    If $X$ is a null set, then $f$ is not integrable on $R$.
+}
+
+\prop{3.36 (lecture)}{
+    Let $\varphi_1, \varphi_2: [a,b] \to \R$ continuous with $\varphi_1\leqslant\varphi_2\  \forall x\in [a,b]$. Let $A = \left\{(x,y):a\leqslant x \leqslant b, \varphi_1(x)\leqslant y \leqslant \varphi_2(x) \right\}$.
+    Let $f:A\to \R$ continuous. Then is $f$ on $A$ integrable and it holds:
+    $$
+        \int_Af(x,y)d(x,y) = \int_a^bdx\int_{\varphi_1(x)}^{\varphi_2(x)}f(x,y)dy.
+    $$
+}
+
+\lemma{3.37 (lecture)}{
+    Let $\varphi:[a,b] \to \R$ continuous. Then is the $graph(\varphi) = \left\{(x,\varphi(x),x\in [a,b]\right\} \subset \R^2$ a null set.
+}
+
+\definition{Border (Rand)}{
+    Let $A\in \R^2$ the \textbf{border} (\textit{Rand} in German) is defined as
+    $$
+        \partial A = \left\{(x,y)\in \R^2:\forall\delta>0\ % \\
+        C_\delta(x,y)\cap A \neq \emptyset%\\
+        \land  C_\delta(x,y)\cap \left(\R^2\setminus A\right) \neq \emptyset\right\}
+    $$
+    where $C_\delta(x,y)=]x-\delta, x+\delta[\times]y-\delta,y+\delta[$.
+
+}
+
+\theorem{4.4.2 (Change of variable formula).}{
+    Let $U \subset \R^2$ be compact subsets. Let $\varphi:U \rightarrow \R^2$ be a continuous map in $C^1$ and $f:A\subset \R^2 \to \R$ a continuous function. Furthermore $B \subset U$. We assume
+    \begin{enumerate}[label=(\arabic*)]
+        \item $\varphi(B)=A$; $A,B$ compact; $\partial A, \partial B$ null sets.
+        \item $\varphi: B\setminus N \to A$ is injective, where $N\subset B$ is a null set.
+    \end{enumerate}
+    Then it follows:
+    $$
+        \int_{A} f(x,y) d(x,y)=\int_{B}f(\varphi(u,v))\left|\operatorname{det}\left(J_{\varphi}(u,v)\right)\right| d(u,v).
+    $$
+}
+
+\other{Example, polar coordinates (lecture)}{
+    Let $\phi: \R^2\to\R^2; (r,\varphi)\mapsto(r\cos\varphi,r\sin\varphi)$. Then we can convert the integral in cartesian coordinates to polar coordinates in the following manner:
+    $$
+        \int_{x^2+y^2\leqslant R^2} f(x,y)d(x,y) = \int_0^{2\pi}\int_0^Rf(r\cos\varphi,r\sin\varphi)r d(r,\varphi)
+    $$
+}
+
+\definition{3.39 Jordan curve, orientation (lecture)}{
+    A \textbf{parameterized Jordan curve} is a parameterized curve $\gamma: [a,b] \to \R^2$ with the following properties
+    \begin{enumerate}[label=(\arabic*)]
+        \item $\gamma(a)=\gamma(b)$
+        \item $\gamma: ]a,b] \to \R^2$ is injective
+        \item A Jordan curve in $\R^2$ is the image of a parameterized Jordan curve.
+    \end{enumerate}
+    Let $e_1=\begin{pmatrix}1\\0\end{pmatrix}$ and $e_2=\begin{pmatrix}0\\1\end{pmatrix}$. A \textbf{base} $(b_1,b_2)$ of $\R^2$ is \textbf{positive oriented} if for the distinct matrix $g\in M_{2,2}(\R)$ with $g(e_1)=b_1$ and $g(e_2)=b_2$, $\det(g)>0$. It is negative oriented if $det(g)<0$.
+}
+
+\definition{3.40 \textit{reguläres Gebiet} (lecture)}{
+    A \textit{reguläres Gebiet} is a open bounded subset $A\subset\R^2$ whose border $\partial A$ is a finite union of disjoint Jordan curves.
+    Each of this curve is called a border component of $A$.\\
+    Let $\gamma:[a,b]\to\R^2$ a parameterized Jordan curve so that $\gamma([a,b])$ is a border component of $A$. Then $\gamma$ is positive oriented relative to $A$ if $(n(t),\gamma'(t))$ is a positive oriented basis of $\R^2$, where $n(t)$ is the unitary vector orthogonal to $\gamma'(t)$ and pointing outwards (not to $A$).
+}
+
+\theorem{4.6.3 (3.41 lecture) Green's formula}{
+    Let $A\subset\R^2$ be a \textit{reguläres Gebiet} and $F:U\to \R^2; (x,y)\mapsto \begin{pmatrix}f_1(x,y)\\f_2(x,y)\end{pmatrix}$ a $C^1$ vector field, where $A\cup \partial A\subset U\in \R^2$. Then it holds
+    $$  \int_{A}\left(\frac{\partial f_{2}}{\partial x}-\frac{\partial f_{1}}{\partial y}\right) d (x,y) = \int_{\partial A} F(s)ds:=\sum_{i=1}^{k} \int_{\gamma_{i}} f \cdot d \vec{s}
+    $$
+}

@@ -1,0 +1,390 @@
+\definition{3.2.1.}{
+    Let $\left(x_{k}\right)_{k \in \mathbb{N}}$ where $x_{k} \in \Rn$. Write
+    $
+        x_{k}=\left(x_{k, 1}, \ldots, x_{k, n}\right) .
+    $
+    Let $y=\left(y_{1}, \ldots, y_{n}\right) \in \Rn$. The sequence $\left(x_{k}\right)$ \textbf{converges to ($\to$)} $y$ as $k \rightarrow+\infty$ if  $\forall \varepsilon>0\ \exists N \geqslant 1$ s.t. $\forall k \geqslant N$, we have
+    $
+        \left\|x_{k}-y\right\|<\varepsilon \text {. }
+    $
+}
+
+\lemma{3.2.2.}{
+    $\left(x_{k}\right) \to y$ as $k \rightarrow+\infty$ $\iff$ either:
+    \begin{enumerate}[label=(\arabic*)]
+        \item $\forall i, 1 \leqslant i \leqslant n$, the sequence of real numbers $\left(x_{k, i}\right) \to y_{i}$.
+        \item The sequence of real numbers $\left\|x_{k}-y\right\|\to 0$ as $k \rightarrow+\infty$.
+    \end{enumerate}
+}
+
+
+\definition{3.2.3.}{
+    Let $X \subset \Rn$ and $f: X \rightarrow \Rm$. (1) Let $x_{0} \in X$. $f$ is\textbf{ continuous at $x_{0}$} if $\forall \varepsilon>0\ \exists \delta>0$ s.t. $\left\|x-x_{0}\right\|<\delta \implies \left\|f(x)-f\left(x_{0}\right)\right\|<\varepsilon$, $\forall x \in X$. (2) $f$ is \textbf{continuous} on $X$ if it is continuous at $x_{0}$ $\forall x_{0} \in X$.
+}
+
+
+\prop{3.2.4.}{
+    Let $X \subset \Rn$ and $f: X \rightarrow \Rm$. Let $x_{0} \in X$. The function $f$ is continuous at $x_{0} \iff \forall \left(x_{k}\right)_{k} \geqslant 1$ in $X$ s.t. $x_{k} \rightarrow x_{0}$ as $k \rightarrow+\infty$, the sequence $\left(f\left(x_{k}\right)\right)_{k} \geqslant 1$ in $\Rm$ converges to $f(x)$.
+}
+
+
+\definition{3.2.5.}{
+    Let $X \subset \Rn$ and $f: X \rightarrow \Rm$. Let $x_{0} \in X$ and $y \in \Rm$. We say that $f$ has the \textbf{limit} $y$ as $x \rightarrow x_{0}$ with $x \neq x_{0}$ if for every $\varepsilon>0$, there exists $\delta>0$, s.t.  $\forall x \in X, x \neq x_{0}$, s.t. $\left\|x-x_{0}\right\|<\delta$, we have $\|f(x)-y\|<\varepsilon$. We then write
+    $
+        \lim _{\atopfrac{x \rightarrow x_{0}}{x \neq x_{0}}} f(x)=y
+    $.
+}
+
+
+\prop{3.2.7.}{
+    Let $X \subset \Rn$ and $f: X \rightarrow \Rm .$ Let $x_{0} \in X$ and $y \in \Rm .$ We have
+    $
+        \lim _{\atopfrac{x \rightarrow x_{0}}{x \neq x_{0}}} f(x)=y \iff
+    $
+    $\forall\left(x_{k}\right) \in X$ s.t. $x_{k} \rightarrow x$ as $k \rightarrow+\infty$, and $x_{k} \neq x_{0}$, the sequence $\left(f\left(x_{k}\right)\right)$ in $\Rm$ converges to $y$.
+}
+
+
+\prop{3.2.9.}{
+    Let $X \subset \Rn, Y \subset \Rm$ and $p \geqslant 1$ an integer. Let $f: X \rightarrow Y$ and $g: Y \rightarrow \mathbb{R}^{p}$ be continuous functions. Then the composite $g \circ f$ is continuous.
+}
+
+\definition{3.2.11.}{
+    \begin{enumerate}[label=(\arabic*)]
+        \item A subset $X \subset \Rn$ is \textbf{bounded} if the set of $\|x\|$ for $x \in X$ is bounded in $\mathbb{R}$.
+        \item A subset $X \subset \Rn$ is \textbf{closed} if for every sequence $\left(x_{k}\right)$ in $X$ that converges in $\Rn$ to some vector $y \in \Rn$, we have $y \in X$.
+        \item A subset $X \subset \Rn$ is \textbf{compact} if it is bounded and closed.
+    \end{enumerate}
+}
+
+\prop{3.2.13.}{
+    Let $f:\Rn \to \Rm$ be a continuous map. For any closed set $Y\subset \Rm$, $f^{-1}(Y) = \{x\in\Rn : f(x)\in Y\} \subset \Rn$ is closed.
+}
+
+\theorem{3.2.15.}{
+    Let $X\subset \Rn$ be a non-empty compact set and $f:X\to\R$ a continuous function. Then $f$ is bounded and achieves its max and min. I.e. $\exists x_+,x_-\in X$ s.t. $f(x_+)=\sup_{x\in X}f(x)$, $f(x_-)=\inf_{x\in X}f(x)$.
+}
+
+\definition{3.3.1.}{
+    A subset $X \subset \Rn$ is \textbf{open} if, for any $x=\left(x_{1}, \ldots, x_{n}\right) \in X$, there exists $\delta>0$ s.t. the set
+    $$
+        \left\{y=\left(y_{1}, \ldots, y_{n}\right) \in \Rn:\left|x_{i}-y_{i}\right|<\delta \text { for all } i\right\}
+    $$
+    is contained in $X$.
+    In other words: any point of $\Rn$ obtained by changing any coordinate of $x$ by at most $\delta$ is still in $X$.
+}
+
+\prop{3.3.2.}{
+    A set $X \subset \Rn$ is open if and only if the complement
+    $
+        Y=\left\{x \in \Rn: x \notin X\right\}
+    $
+    is closed.
+}
+
+\corollary{3.3.3.}{
+    If $f: \Rn \rightarrow \Rm$ is continuous and $Y \subset \Rm$ is open, then $f^{-1}(Y)$ is open in $\Rn$.
+}
+
+\definition{3.3.5}{
+    Let $X \subset \Rn$ be an open set. Let $f: X \rightarrow \Rm$ be a function. Let $1 \leqslant i \leqslant n$. We say that $f$ has a \textbf{partial derivative} on $X$ with respect to the $i$-th variable, or coordinate, if for all $x_{0}=\left(x_{0,1}, \ldots, x_{0, n}\right) \in X$, the function defined by
+    $$
+        g(t)=f\left(x_{0,1}, \ldots, x_{0, i-1}, t, x_{0, i+1}, \ldots, x_{0, n}\right)
+    $$
+    on the set
+    $
+        I=\left\{t \in \R:\left(x_{0,1}, \ldots, x_{0, i-1}, t, x_{0, i+1}, \ldots, x_{0, n}\right) \in X\right\}
+    $
+    is differentiable at $t=x_{0, i}$. Its \textbf{derivative} $g^{\prime}\left(x_{0, i}\right)$ at $x_{0, i}$ is denoted
+    $$
+        \frac{\partial f}{\partial x_{i}}\left(x_{0}\right), \quad \partial_{x_{i}} f\left(x_{0}\right), \quad \partial_{i} f\left(x_{0}\right)
+    $$
+}
+
+\prop{3.3.7.}{
+    Consider $X \subset \Rn$ open and $f, g$ functions from $X$ to $\Rm$. Let $1 \leqslant i \leqslant n$.
+    \begin{enumerate}[label=(\arabic*)]
+        \item If $f$ and $g$ have partial derivatives with respect to the $i$-th coordinate on $X$, then $f+g$ also does, and
+              $$
+                  \partial_{x_{i}}(f+g)=\partial_{x_{i}}(f)+\partial_{x_{i}}(g) .
+              $$
+        \item If $m=1$, and if $f$ and $g$ have partial derivatives with respect to the $i$-th coordinate on $X$, then $f g$ also does and
+              $$
+                  \partial_{x_{i}}(f g)=\partial_{x_{i}}(f) g+f \partial_{x_{i}}(g) .
+              $$
+    \end{enumerate}
+    Furthermore, if $g(x) \neq 0$ for all $x \in X$, then $f / g$ has a partial derivative with respect to the $i$-th coordinate on $X$, with
+    $$
+        \partial_{x_{i}}(f / g)=\left(\partial_{x_{i}}(f) g-f \partial_{x_{i}}(g)\right) / g^{2} .
+    $$
+}
+
+\definition{3.3.9. (Jacobi matrix)}{
+    Let $X \subset \Rn$ open and $f: X \rightarrow \Rm$ a function with partial derivatives on $X$. Write
+    $$
+        f(x)=\left(f_{1}(x), \ldots, f_{m}(x)\right) .
+    $$
+    For any $x \in X$, the matrix
+    $$
+        J_{f}(x)=\left(\partial_{x_{j}} f_{i}(x)\right)_{\atopfrac{1 \leqslant i \leqslant m}{1 \leqslant j \leqslant n}}
+    $$
+    with $m$ rows and $n$ columns is called the \textbf{Jacobi matrix} of $f$ at $x$.
+}
+
+\definition{3.3.11 (Gradient, Divergence)}{Let $X \subset \Rn$ be open.
+    (1) Let $f: X \rightarrow \R$ be a function. If all partial derivatives of $f$ exist at $x_{0} \in X$, then the column vector
+    $$
+        \left(\begin{array}{c}
+                \partial_{x_{1}} f\left(x_{0}\right) \\
+                \cdots                               \\
+                \partial_{x_{n}} f\left(x_{0}\right)
+            \end{array}\right)
+    $$
+    is called the \textbf{gradient} at $x_{0}$, and is denoted $\nabla f\left(x_{0}\right)$.
+    (2) Let $f=\left(f_{1}, \ldots, f_{n}\right): X \rightarrow \Rn$ be a function with values in $\Rn$ s.t. all partial derivatives of all coordinates $f_{i}$ of $f$ exist at $x_{0} \in X$. Then the real number
+    $$
+        \operatorname{Tr}\left(J_{f}\left(x_{0}\right)\right)=\sum_{i=1}^{n} \partial_{x_{i}} f_{i}\left(x_{0}\right),
+    $$
+    the trace of the Jacobi matrix, is called the \textbf{divergence} of $f$ at $x_{0}$, and is denoted $\operatorname{div}(f)\left(x_{0}\right)$.}
+
+\definition{3.4.2.}{
+    Let $X \subset \Rn$ be open and $f: X \rightarrow \Rm$ be a function. Let $u$ be a linear map $\Rn \rightarrow \Rm$ and $x_{0} \in X$. We say that \textbf{$f$ is differentiable at $x_{0}$ with differential $u$} if
+    $$
+        \lim _{x \rightarrow x_{0}} \frac{1}{\left\|x-x_{0}\right\|}\left(f(x)-f\left(x_{0}\right)-u\left(x-x_{0}\right)\right)=0
+    $$
+    where the limit is in $\Rm$. We then denote $d f\left(x_{0}\right)=u$.
+    If $f$ is differentiable at every $x_{0} \in X$, then we say that $f$ is differentiable on $X$.}
+
+    \prop{3.4.4.}{Let $X \subset \Rn$ be open and $f: X \rightarrow \Rm$ be a function that is differentiable on $X$.
+    (1) The function $f$ is continuous on $X$.
+    (2) The function $f$ admits partial derivatives on $X$ with respect to each variable.
+    (3) Assume that $m=1$. Let $x_{0} \in X$, and let
+    $
+        u\left(x_{1}, \ldots, x_{n}\right)=a_{1} x_{1}+\cdots+a_{n} x_{n}
+    $
+    be the differential of $f$ at $x_{0}$. We then have
+    $
+        \partial_{x_{i}} f\left(x_{0}\right)=a_{i}
+    $
+    for $1 \leqslant i \leqslant n$.
+}
+
+
+\prop{3.4.6.}{
+    Let $X \subset \Rn$ be open, $f: X \rightarrow \Rm$ and $g: X \rightarrow \Rm$ differentiable functions on $X$.
+    \begin{enumerate}[label=(\arabic*)]
+        \item The function $f+g$ is differentiable with differential $d(f+g)=d f+d g$, and if $m=1$, then $f g$ is differentiable.
+        \item If $m=1$ and if $g(x) \neq 0$ for all $x \in X$, then $f / g$ is differentiable.
+    \end{enumerate}
+}
+
+
+\prop{3.4.7.}{
+    Let $X \subset \Rn$ be open, $f: X \rightarrow \Rm$ a function on $X .$ If $f$ has all partial derivatives on $X$, and if the partial derivatives of $f$ are continuous on $X$, then $f$ is differentiable on $X$, with differential determined by its partial derivatives, in the sense that the matrix of the differential $d f\left(x_{0}\right)$, with respect to the canonical basis of $\Rn$ and $\Rm$, is the Jacobi matrix of $f$ at $x_{0}$.
+}
+
+\prop{3.4.9 (Chain rule)}{
+    Let $X \subset \Rn$ be open, $Y \subset \Rm$ be open, and let $f: X \rightarrow Y$ and $g: Y \rightarrow \Rp$ be differentiable functions. Then $g \circ f: X \rightarrow \Rp$ is differentiable on $X$, and for any $x \in X$, its differential is given by the composition
+    $$
+        d(g \circ f)\left(x_{0}\right)=d g\left(f\left(x_{0}\right)\right) \circ d f\left(x_{0}\right) \text {. }
+    $$
+    In particular, the Jacobi matrix satisfies
+    $$
+        J_{g \circ f}\left(x_{0}\right)=J_{g}\left(f\left(x_{0}\right)\right) J_{f}\left(x_{0}\right)
+    $$
+    where the right-hand side is a matrix product.
+}
+
+\definition{3.4.11.}{
+    Let $X \subset \Rn$ be open and $f: X \rightarrow \Rm$ a function that is differentiable. Let $x_{0} \in X$ and $u=d f\left(x_{0}\right)$ be the differential of $f$ at $x_{0}$. The graph of the affine linear approximation
+    $$
+        g(x)=f\left(x_{0}\right)+u\left(x-x_{0}\right)
+    $$
+    from $\Rn$ to $\Rm$, or in other words the set
+    $$
+        \left\{(x, y) \in \Rn \times \Rm: y=f\left(x_{0}\right)+u\left(x-x_{0}\right)\right.
+    $$
+    is called the \textbf{tangent space} at $x_{0}$ to the graph of $f$.
+}
+
+\definition{3.4.13.}{
+    Let $X \subset \Rn$ be an open set and let $f: X \rightarrow \Rm$ be a function. Let $v \in \Rn$ be a non-zero vector and $x_{0} \in X$. We say that $f$ has \textbf{directional derivative $w \in \Rm$ in the direction $v$}, if the function $g$ defined on the set
+    $$
+        I=\left\{t \in \R: x_{0}+t v \in X\right\}
+    $$
+    by
+    $$
+        g(t)=f\left(x_{0}+t v\right)
+    $$
+    has a derivative at $t=0$, and this is equal to $w$.
+    In other words, this means that the limit
+    $$
+        \lim _{\atopfrac{t \rightarrow 0 }{ t \neq 0}} \frac{f\left(x_{0}+t v\right)-f\left(x_{0}\right)}{t}
+    $$
+    exists and is equal to $w$.
+}
+
+
+\prop{3.4.15.}{
+    Let $X \subset \Rn$ be an open set and let $f: X \rightarrow \Rm$ be a differentiable function. Then for any $x \in X$ and non-zero $v \in \Rn$, the function $f$ has a directional derivative at $x_{0}$ in the direction $v$, equal to $df\left(x_{0}\right)(v)$.
+}
+
+\definition{3.5.1.}{Let $X \subset \Rn$ be open and $f: X \rightarrow \Rm$.
+    We say that $f$ is of class $C^{1}$ if $f$ is differentiable on $X$ and all its partial derivatives are continuous. The set of functions of class $C^{1}$ from $X$ to $\Rm$ is denoted $C^{1}\left(X ; \Rm\right)$.
+    Let $k \geqslant 2$. We say, by induction, that $f$ is of class $C^{k}$ if it is differentiable and each partial derivative $\partial_{x_{i}} f: X \rightarrow \Rm$ is of class $C^{k-1}$. The set of functions of class $C^{k}$ from $X$ to $\Rm$ is denoted $C^{k}\left(X ; \Rm\right)$.
+
+    If $f \in C^{k}\left(X ; \Rm\right)$ for all $k \geqslant 1$, then we say that $f$ is of class $C^{\infty}$. The set of such functions is denoted $C^{\infty}\left(X ; \Rm\right)$.}
+
+\prop{3.5.4 (Mixed derivatives commute)}{
+    $k \geqslant 2$. Let $X \subset \Rn$ be open and let $f: X \rightarrow \R^{m}$ be a function of class $C^{k}$. Then the partial derivatives of order $k$ are independent of the order in which the partial derivatives are taken: for any variables $x$ and $y$, we have
+    $
+        \partial_{x, y} f=\partial_{y, x} f
+    $
+    and for any variables $x, y, z$, we have
+    $$
+        \partial_{x, y, z} f=\partial_{x, z, y} f=\partial_{y, z, x} f=\partial_{z, x, y} f=\cdots
+    $$
+}
+
+\definition{3.5.9 (Hessian).}{
+    Let $X \subset \Rn$ be open and $f: X \rightarrow \R$ a $C^{2}$ function. For $x \in X$, the \textbf{Hessian matrix} of $f$ at $x$ is the symmetric square matrix
+    $$
+        \operatorname{Hess}_{f}(x)=\left(\partial_{x_{i}, x_{j}} f\right)_{1 \leqslant i, j \leqslant n} .
+    $$
+    We also sometimes write simply $H_{f}(x)$.
+}
+
+\definition{3.7.1 (Taylor polynomials).}{
+    Let $k \geqslant 1$ be an integer. Let $f: X \rightarrow \R$ be a function of class $C^{k}$ on $X$, and fix $x_{0} \in X$. The $k$-th Taylor polynomial of $f$ at the point $x_{0}$ is the polynomial in $n$ variables of degree $\leqslant k$ given by
+    $$
+        \begin{aligned}
+            T_{k} f\left(y ; x_{0}\right)= & f\left(x_{0}\right) +\sum_{i=1}^{n} \frac{\partial f}{\partial x_{i}}\left(x_{0}\right) y_{i}+\cdots                                                                                           \\
+                                           & +\sum_{m_{1}+\cdots+m_{n}=k} \frac{1}{m_{1} ! \cdots m_{n} !} \frac{\partial^{k} f}{\partial x_{1}^{m_{1}} \cdots \partial x_{n}^{m_{n}}}\left(x_{0}\right) y_{1}^{m_{1}} \cdots y_{n}^{m_{n}}
+        \end{aligned}
+    $$
+    where the last sum ranges over the tuples of $n$ non-negative integers s.t. the sum is $k$.
+}
+
+\corollary{$T_2f$ (lecture)}{
+    With $x,x_0\in \R^2$, $x_0$ fixed.
+    $$T_{2} f\left(x;x_{0}\right)=f\left(x_{0}\right)+\left\langle\nabla f\left(x_{0}\right),x\right\rangle+\frac{1}{2}x^{\top} \cdot \operatorname{Hesse}_{f}\left(x_{0}\right) \cdot x$$
+}
+
+\prop{
+    3.7.3 (Taylor approximation)}{Let $k \geqslant 1$ be an integer. Let $X \subset \Rn$ be open and $f: X \rightarrow \R$ be a function of class $C^{k}$. For $x_{0}$ in $X$, if we define $E_{k} f\left(x ; x_{0}\right)$ by
+    $$
+        f(x)=T_{k} f\left(x-x_{0} ; x_{0}\right)+E_{k} f\left(x ; x_{0}\right)
+    $$
+    then we have
+    $$
+        \lim _{\atopfrac{x \rightarrow x_{0}}{x \neq x_{0}}} \frac{E_{k} f\left(x ; x_{0}\right)}{\left\|x-x_{0}\right\|^{k}}=0
+    $$
+}
+
+\prop{3.8.1. (Maximum, minimum and derivative)}{
+    Let $X \subset \Rn$ be open and $f: X \rightarrow \R$ a differentiable function. If $x_{0} \in X$ is s.t.
+    \begin{center}
+        $f(y) \leqslant f\left(x_{0}\right)$ for all $y$ close enough to $x_{0}$ (local maximum at $x_{0}$ )
+    \end{center}
+    or
+    \begin{center}
+        $f(y) \geqslant f\left(x_{0}\right)$ for all $y$ close enough to $x_{0}$ (local minimum at $x_{0}$ ).
+    \end{center}
+    Then we have $d f\left(x_{0}\right)=0$, or in other words $\nabla f\left(x_{0}\right)=0$, or equivalently
+    $
+        \frac{\partial f}{\partial x_{i}}\left(x_{0}\right)=0
+    $
+    for $1 \leqslant i \leqslant n$.\\
+}
+
+
+\definition{ 3.8.2 (Critical point)}{
+    Let $X \subset \Rn$ be open and $f: X \rightarrow \R$ a differentiable function. A point $x_{0} \in X$ s.t. $\nabla f\left(x_{0}\right)=0$ is called a \textbf{critical point} of the function $f$.
+}
+
+\definition{3.8.6 (Non-degenerate critical point)}{
+    Let $X \subset \Rn$ be open and $f: X \rightarrow$ $\Rn$ a function of class $C^{2}$. A critical point $x_{0} \in X$ of $f$ is called \textbf{non-degenerate} if the Hessian matrix has non-zero determinant.
+}
+
+ 
+
+\definition{Positive definite (linalg)} {
+        Let $A\in \R^{n\times n}$ be a symmetric matrix. We say $A$ is positive definite if $\left\langle x,Ax\right\rangle>0$.
+}
+
+\prop{Definite matrix and eigenvalues (linalg)} {
+    If a matrix is positive definite, all its eigen values are positive.
+}
+
+\definition{Leading principal minor (linalg)}{
+    The $k$-th leading principal minor of a matrix $M$ is the determinant of its upper-left $k\times k$ sub-matrix.
+}
+
+\prop{Leading principal minor and definite matrix (linalg)}{
+    A matrix is positive definite $\iff$ all its leading principal minors ($1$ to $n$) are positive.
+}
+
+\corollary{3.8}{
+    Let $X \subset \Rn$ be open and $f: X \rightarrow \R$ a function of class $C^{2}$. Let $x_{0}$ be a non-degenerate critical point of $f .$ Let $p$ and $q$ be the number of positive and negative eigenvalues of Hess $_{f}\left(x_{0}\right)$.
+    \begin{enumerate}[label=(\arabic*)]
+        \item If $p=n$, equivalently if $q=0$, the function $f$ has a local minimum at $x_{0}$.
+        \item If $q=n$, equivalently if $p=0$, the function $f$ has a local maximum at $x_{0}$.
+        \item Otherwise, equivalently if $p q \neq 0$, the function $f$ does not have a local extremum at $x_{0}$. One then says that $f$ has a saddle point at $x_{0}$.
+    \end{enumerate}
+}
+
+\prop{3.9.2}{
+    Let $X \subset \Rn$ be open and let $f: X \rightarrow \R$ and $g: X \rightarrow \R$ be functions of class $C^{1}$. If $x_{0} \in X$ is a local extremum of the function $f$ restricted to the set
+    $
+        Y=\{x \in X: g(x)=0\}
+    $
+    then either $\nabla g\left(x_{0}\right)=0$, or there exists $\lambda_{0} \in \R$ s.t.
+    $$
+        \left\{\begin{array}{l}
+            \nabla f\left(x_{0}\right)=\lambda \nabla g\left(x_{0}\right) \\
+            g\left(x_{0}\right)=0
+        \end{array}\right.
+    $$
+    or in other words, there exists $\lambda$ s.t. $\left(x_{0}, \lambda\right)$ is a critical point of the differentiable function $h: X \times \R \rightarrow \R$ defined by
+    $
+        h(x, \lambda)=f(x)-\lambda g(x) .
+    $
+    Such a value $\lambda$ is called a Lagrange multiplier at $x_{0}$.
+}
+
+\definition{3.10.1 (Change of variable)}{
+    Let $X \subset \Rn$ be open and $f: X \rightarrow \Rn$ be differentiable. Let $x_{0} \in X$. We say that $f$ is a \textbf{change of variable} around $x_{0}$ if there is a radius $r>0$ s.t. the restriction of $f$ to the ball
+    $$
+        B=\left\{x \in \Rn:\left\|x-x_{0}\right\|<r\right\}
+    $$
+    of radius $r$ around $x_{0}$ has the property that the image $Y=f(B)$ is open in $\Rn$, and if there is a differentiable map $g: Y \rightarrow B$ s.t. $f \circ g=\operatorname{Id}_{Y}$ and $g \circ f=\operatorname{Id}_{B}$.
+}
+
+\theorem{3.10.2 (Inverse funtion theorem)} {
+    (Inverse function theorem). Let $X \subset \Rn$ be open and $f: X \rightarrow \Rn$
+    differentiable. If $x_{0} \in X$ is s.t. $\operatorname{det}\left(J_{f}\left(x_{0}\right)\right) \neq 0$, i.e., s.t. the Jacobian
+    trix of $f$ at $x_{0}$ is invertible, then $f$ is a change of variable around $x_{0}$. Moreover, the Jacobian of $g$ at $x_{0}$ is determined by
+    $$
+        J_{g}\left(f\left(x_{0}\right)\right)=J_{f}\left(x_{0}\right)^{-1}
+    $$
+    In addition, if $f$ is of class $C^k$, then $g$ is of class $C^k$.
+}
+
+\theorem{3.10.4 (Implicit Function Theorem).}{
+    Let $X \subset \R^{n+1}$ be open and let $g: X \rightarrow \R$ be of class $C^{k}$ with $k \geqslant 1$. Let $\left(x_{0}, y_{0}\right) \in \Rn \times \R$ be s.t. $g\left(x_{0}, y_{0}\right)=0$. Assume that
+    $$
+        \partial_{y} g\left(x_{0}, y_{0}\right) \neq 0
+    $$
+    Then there exists an open set $U \subset \Rn$ containing $x_{0}$, an open interval $I \subset \R$ containing $y_{0}$, and a function $f: U \rightarrow \R$ of class $C^{k}$ s.t. the system of equations
+    $$
+        \left\{\begin{array}{l}
+            g(x, y)=0 \\
+            x \in U, \quad y \in I
+        \end{array}\right.
+    $$
+    is equivalent with $y=f(x)$. In particular, $f\left(x_{0}\right)=y_{0}$. Moreover, the gradient of $f$ at $x_{0}$ is given by
+    $$
+        \nabla f\left(x_{0}\right)=-\frac{1}{\left(\partial_{y} g\right)\left(x_{0}, y_{0}\right)} \nabla_{x} g\left(x_{0}, y_{0}\right)
+    $$
+    where $\nabla_{x} g=\left(\partial_{x_{1}} g, \ldots, \partial_{x_{n}} g\right)$
+}
