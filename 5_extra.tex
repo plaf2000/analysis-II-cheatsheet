@@ -1,0 +1,15 @@
+\other{Vector field example}{
+    A vector field often discussed in the series and seen in some lecture's examples:
+    $$f: \R^2\setminus \{(0,0)\} \to \R^2; f(x,y) = \left(\begin{matrix}
+        \frac{-y}{x^2+y^2}\\
+        \frac{x}{x^2+y^2}
+    \end{matrix}\right).$$
+    This vector field is \textbf{not} conservative, even if $\frac{\partial f_2}{\partial x}=\frac{\partial f_1}{\partial y}$. For example, the line integral over the parameterized curve of a "clockwise" closed circle of radius 1 doesn't give 0 as expected, but $\pi/2$ instead.\\
+    We can though define the potentials:
+    \begin{itemize}
+        \item $g_1: \R^+\times \R; (x,y) \mapsto \arctan(y/x)$
+        \item $g_2: \R\times \R^+; (x,y) \mapsto \arctan(-x/y) = \arctan(y/x) - \pi/2$
+        \item $g_3: \R^-\times \R; (x,y) \mapsto \arctan(y/x)$
+        \item $g_4: \R\times \R^-; (x,y) \mapsto \arctan(-x/y) = \arctan(y/x) - \pi/2$
+    \end{itemize}
+}
