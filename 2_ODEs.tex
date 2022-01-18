@@ -65,19 +65,15 @@
     are linearly independent solutions. Taking the union of the functions $f_{\alpha, j}$ for all roots of $P$, each with its multiplicity, gives a basis of the space of solutions.
 }
 
-% \other{Special form for special solution}{
-%     \begin{center}
-%         \begin{tabular}{|c|c|} 
-%          \hline
-%           $b(x)$ & Solution's form \\ \hline
-%           $a \cdot e^{\alpha x}$ & $b \cdot e^{\alpha x}$\\ \hline
-%           $a \sin(\beta x)$ & $c \sin(\beta x) + d \cos(\beta x)$\\ \hline
-%           $b \cos(\beta x)$ & $c \sin(\beta x) + d \cos(\beta x)$\\ \hline
-%           $a e^{\alpha x} \sin(\beta x)$ & $e^{\alpha x} \Big( c \sin(\beta x) + d \cos(\beta x) \Big)$\\ \hline
-%           $b e^{\alpha x} \cos(\beta x)$ & $e^{\alpha x} \Big( c \sin(\beta x) + d \cos(\beta x) \Big)$\\ \hline
-%           $P_n(x) e^{\alpha x}$ & $R_n(x) \cdot e^{\alpha x}$\\ \hline
-%           $P_n(x) e^{\alpha x} \sin(\beta x)$ & $e^{\alpha x} \Big( R_n(x) \sin(\beta x) + S_n(x) \cos(\beta x) \Big)$\\ \hline
-%           $P_n(x) e^{\alpha x} \cos(\beta x)$ & $e^{\alpha x} \Big( R_n(x) \sin(\beta x) + S_n(x) \cos(\beta x) \Big)$\\ \hline
-%         \end{tabular}
-%       \end{center}
-% }
+\other{Special form solutions}{
+    For $d\geqslant0$ and $Q,Q_1,Q_2$ are polynomials of degree $d$ if $\beta$ is a root of the companion polynomial, or $Q,Q_1,Q_2$ are polynomials of degree $d+j$ if $\beta$ is a root of the companion polynomial of multiplicity j.
+\begin{center}
+        \begin{tabular}{|c|c|} 
+         \hline
+          $b(x)$ & Solution's form \\ \hline
+          $x^de^{\beta x}$ & $Q(x)e^{\beta x}$\\ \hline
+          $x^d\cos(\beta x)$ & $Q_1(x)\cos(\beta x)+Q_2(x)\sin(\beta x)$\\ \hline
+          $x^d\sin(\beta x)$ & $Q_1(x)\cos(\beta x)+Q_2(x)\sin(\beta x)$\\ \hline
+        \end{tabular}
+      \end{center}
+}
