@@ -40,7 +40,7 @@
     is independent of the choice of a parameterized curve $\gamma$ in $X$ from $x_{1}$ to $x_{2}$, then we say that the vector field is conservative.
 }
 
-\lemma{3.14 (lecture)}{
+\lemma{3.14L)}{
     A vectorfield $f:X\to \Rn$ is conservative $\iff$ for each parameterized curved $\gamma$ contained in $X$ it holds that $\int_\gamma f(s)d\vec{s}=0$.
 }
 
@@ -50,7 +50,7 @@
     If any two points of $X$ can be joined by a parameterized curve, then $g$ is unique up to addition of a constant: if $\nabla g_{1}=f$, then $g-g_{1}$ is constant on $X$.
 }
 
-\definition{3.16 (path-connected space, potential) (lecture)}{
+\definition{3.16L (path-connected space, potential)}{
     \begin{enumerate}[label=(\arabic*)]
         \item An open set $X\subset \Rn$ is \textbf{path-connected} if for each pair of points in $X$ are the endpoints of a parameterized curve.
         \item A function $g:X\to\R$ s.t. $\nabla g = f$ is called \textbf{potential} of $f$.
@@ -125,19 +125,19 @@
     \end{enumerate}
 }
 
-\prop{3.30 (lecture)}{
+\prop{3.30L}{
     Let $R = [a,b]\times [c,d]$ be a compact rectangle and $f:R\to \R$ continuous. Then is $f$ on $R$ integrable.
 }
 
-\prop{3.31 (lecture)}{
+\prop{3.31L}{
     Let $K\subset \R^2$ a compact subset and $f:K\to \R$ continuous. Then is $f$ uniformly continuous.
 }
 
-\definition{3.32 (null set, lecture)}{
+\definition{3.32L (null set)}{
     Let $X\subset R\subset \R^2$. Then $X$ is a null set (in $\R^2$) if $\forall\epsilon > 0$ there are finite many rectangles $R_k = [a_k,b_k]\times [c_k,d_k]$ with $1\leqslant k \leqslant n$, s.t. $$X\subset \bigcup_{k=1}^nR_k,\quad \sum_{k=1}^n{\mu(R_k)}<\epsilon$$
 }
 
-\lemma{3.33 (lecture)}{
+\lemma{3.33L}{
     Let $\varphi:[0,1] \to \R^2$ a Lipschitz curve, so that $$
         \left\|\varphi(s) - \varphi(t)\right\| \leqslant M\cdot|s-t|\quad \forall s,t\in[0,1]
     $$
@@ -145,12 +145,12 @@
 }
 
 
-\prop{3.35 (lecture)}{
+\prop{3.35L}{
     Let $f:R\to \R$ bounded. Let $$X=\left\{(x,y)\in \R: f\text{ is in } (x,y) \text{ not continuous}\right\}$$
     If $X$ is a null set, then $f$ is not integrable on $R$.
 }
 
-\prop{3.36 (lecture)}{
+\prop{3.36L}{
     Let $\varphi_1, \varphi_2: [a,b] \to \R$ continuous with $\varphi_1\leqslant\varphi_2\  \forall x\in [a,b]$. Let $A = \left\{(x,y):a\leqslant x \leqslant b, \varphi_1(x)\leqslant y \leqslant \varphi_2(x) \right\}$.
     Let $f:A\to \R$ continuous. Then is $f$ on $A$ integrable and it holds:
     $$
@@ -158,7 +158,7 @@
     $$
 }
 
-\lemma{3.37 (lecture)}{
+\lemma{3.37L}{
     Let $\varphi:[a,b] \to \R$ continuous. Then is the $graph(\varphi) = \left\{(x,\varphi(x),x\in [a,b]\right\} \subset \R^2$ a null set.
 }
 
@@ -185,14 +185,14 @@
     $$
 }
 
-\other{Example, polar coordinates (lecture)}{
+\other{Example, polar coordinates (L)}{
     Let $\phi: \R^2\to\R^2; (r,\varphi)\mapsto(r\cos\varphi,r\sin\varphi)$. Then we can convert the integral in cartesian coordinates to polar coordinates in the following manner:
     $$
         \int_{x^2+y^2\leqslant R^2} f(x,y)d(x,y) = \int_0^{2\pi}\int_0^Rf(r\cos\varphi,r\sin\varphi)r d(r,\varphi)
     $$
 }
 
-\definition{3.39 Jordan curve, orientation (lecture)}{
+\definition{3.39L Jordan curve, orientation }{
     A \textbf{parameterized Jordan curve} is a parameterized curve $\gamma: [a,b] \to \R^2$ with the following properties
     \begin{enumerate}[label=(\arabic*)]
         \item $\gamma(a)=\gamma(b)$
@@ -202,13 +202,13 @@
     Let $e_1=\begin{pmatrix}1\\0\end{pmatrix}$ and $e_2=\begin{pmatrix}0\\1\end{pmatrix}$. A \textbf{base} $(b_1,b_2)$ of $\R^2$ is \textbf{positive oriented} if for the distinct matrix $g\in M_{2,2}(\R)$ with $g(e_1)=b_1$ and $g(e_2)=b_2$, $\det(g)>0$. It is negative oriented if $det(g)<0$.
 }
 
-\definition{3.40 \textit{reguläres Gebiet} (lecture)}{
+\definition{3.40 \textit{reguläres Gebiet} (L)}{
     A \textit{reguläres Gebiet} is a open bounded subset $A\subset\R^2$ whose border $\partial A$ is a finite union of disjoint Jordan curves.
     Each of this curve is called a border component of $A$.\\
     Let $\gamma:[a,b]\to\R^2$ a parameterized Jordan curve so that $\gamma([a,b])$ is a border component of $A$. Then $\gamma$ is positive oriented relative to $A$ if $(n(t),\gamma'(t))$ is a positive oriented basis of $\R^2$, where $n(t)$ is the unitary vector orthogonal to $\gamma'(t)$ and pointing outwards (not to $A$).
 }
 
-\theorem{4.6.3 (3.41 lecture) Green's formula}{
+\theorem{4.6.3 (3.41L) Green's formula}{
     Let $A\subset\R^2$ be a \textit{reguläres Gebiet} and $F:U\to \R^2; (x,y)\mapsto \begin{pmatrix}f_1(x,y)\\f_2(x,y)\end{pmatrix}$ a $C^1$ vector field, where $A\cup \partial A\subset U\in \R^2$. Then it holds
     $$  \int_{A}\left(\frac{\partial f_{2}}{\partial x}-\frac{\partial f_{1}}{\partial y}\right) d (x,y) = \int_{\partial A} F(s)ds:=\sum_{i=1}^{k} \int_{\gamma_{i}} f \cdot d \vec{s}
     $$

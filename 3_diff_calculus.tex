@@ -145,7 +145,8 @@
     $$
         \operatorname{Tr}\left(J_{f}\left(x_{0}\right)\right)=\sum_{i=1}^{n} \partial_{x_{i}} f_{i}\left(x_{0}\right),
     $$
-    the trace of the Jacobi matrix, is called the \textbf{divergence} of $f$ at $x_{0}$, and is denoted $\operatorname{div}(f)\left(x_{0}\right)$.}
+    the trace of the Jacobi matrix, is called the \textbf{divergence} of $f$ at $x_{0}$, and is denoted $\operatorname{div}(f)\left(x_{0}\right)$.
+}
 
 \definition{3.4.2.}{
     Let $X \subset \Rn$ be open and $f: X \rightarrow \Rm$ be a function. Let $u$ be a linear map $\Rn \rightarrow \Rm$ and $x_{0} \in X$. We say that \textbf{$f$ is differentiable at $x_{0}$ with differential $u$} if
@@ -193,6 +194,18 @@
         J_{g \circ f}\left(x_{0}\right)=J_{g}\left(f\left(x_{0}\right)\right) J_{f}\left(x_{0}\right)
     $$
     where the right-hand side is a matrix product.
+}
+
+\other{From Example 3.4.10, 2.36L}{
+    Referring to the propostion above (3.4.9)
+    \begin{enumerate}[label=(\arabic*)]
+        \item[(2)]  let $p=1$, then it holds that $$\partial_{j}(g \circ f)(x)=\sum_{i=1}^{m} \partial_{i} g(f(x)) \cdot \partial_{j} f_{i}(x)$$
+        \item[(3)] let $p=1$ and $X\subset \R$, than it holds that\\
+        $\begin{aligned}
+            (g \circ f)^{\prime}(t) &=\sum_{i=1}^{m}\left(\partial_{i} g\right)(f(t)) \cdot f_{i}^{\prime}(t) \\
+            &=\left\langle\nabla g(f(t)), f^{\prime}(t)\right\rangle .
+        \end{aligned}$
+    \end{enumerate}
 }
 
 \definition{3.4.11.}{
@@ -265,7 +278,7 @@
     where the last sum ranges over the tuples of $n$ non-negative integers s.t. the sum is $k$.
 }
 
-\corollary{$T_2f$ (lecture)}{
+\corollary{$T_2f$ (L)}{
     With $x,x_0\in \R^2$, $x_0$ fixed.
     $$T_{2} f\left(x;x_{0}\right)=f\left(x_{0}\right)+\left\langle\nabla f\left(x_{0}\right),x\right\rangle+\frac{1}{2}x^{\top} \cdot \operatorname{Hesse}_{f}\left(x_{0}\right) \cdot x$$
 }
